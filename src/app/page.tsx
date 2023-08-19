@@ -4,15 +4,21 @@ export const metadata: Metadata = {
   title: 'Greenhive - Home',
 };
 
+import HomeOuterContent from '@/components/HomeOuterContent';
+
 import './styles.scss';
 
 export default function Home() {
   return (
-    <div className="container">
-      <h1 className="title">Titulo</h1>
-      <h1 className="text">Parágrafo</h1>
+    <section className="home">
+      <HomeOuterContent />
 
-      <div className="detail"></div>
-    </div>
+      {/* <div className="container">
+        <h1 className="title">Titulo</h1>
+        <p className="text">Parágrafo</p>
+
+        <div className="detail"></div>
+      </div> */}
+    </section>
   );
 }

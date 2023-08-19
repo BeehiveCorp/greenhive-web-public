@@ -1,16 +1,24 @@
 @import './index.scss';
+@import './reset.scss';
+@import './reusable.scss';
 
-.container {
+body {
   @include themed() {
-    color: t('text');
-    background: t('background');
+    color: getColor('text');
+    background: getColor('background');
 
-    .title {
-      color: t('title');
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    span {
+      color: getColor('title');
     }
 
-    .text {
-      color: t('text');
+    p {
+      color: getColor('text');
     }
   }
 }

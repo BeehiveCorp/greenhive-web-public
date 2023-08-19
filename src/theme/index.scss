@@ -1,4 +1,5 @@
 @import './palette.scss';
+@import './variables.module.scss';
 
 @mixin themed() {
   @each $palette, $map in $palettes {
@@ -19,6 +20,6 @@
   }
 }
 
-@function t($key) {
+@function getColor($key) {
   @return map-get($theme-map, $key);
 }

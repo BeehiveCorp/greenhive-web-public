@@ -13,12 +13,12 @@ import '@/theme/global.scss';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="theme--dark" suppressHydrationWarning>
       <body className={montserrat.className}>
-        <Navbar />
-        <div className="theme--dark">
-          <Providers>{children}</Providers>
-        </div>
+        <Providers>
+          <Navbar />
+          {children}
+        </Providers>
       </body>
     </html>
   );
