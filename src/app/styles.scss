@@ -1,0 +1,10 @@
+@import '@/theme';
+
+.detail {
+  width: 400px;
+  height: 400px;
+
+  @include themed() {
+    background: t('primary');
+  }
+}

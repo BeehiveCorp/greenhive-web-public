@@ -1,0 +1,24 @@
+@import './palette.scss';
+
+@mixin themed() {
+  @each $palette, $map in $palettes {
+    .theme--#{$palette} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($palettes, $palette), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}

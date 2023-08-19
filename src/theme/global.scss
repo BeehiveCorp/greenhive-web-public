@@ -1,3 +1,16 @@
-body {
-  background-color: green;
+@import './index.scss';
+
+.container {
+  @include themed() {
+    color: t('text');
+    background: t('background');
+
+    .title {
+      color: t('title');
+    }
+
+    .text {
+      color: t('text');
+    }
+  }
 }
