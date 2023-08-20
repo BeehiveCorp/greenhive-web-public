@@ -1,0 +1,46 @@
+@import '@/theme';
+
+.hero {
+  height: calc(100vh - $navbar-height);
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(8, 1fr);
+
+  &__content {
+    grid-row: 1;
+    grid-column: 1 / span 4;
+    z-index: 10;
+
+    .title {
+      font-size: 4rem;
+      margin-bottom: 40px;
+
+      @include themed() {
+        color: getColor('title');
+      }
+    }
+
+    .text {
+      width: 65%;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 8px;
+      margin-top: 80px;
+    }
+  }
+
+  &__gif {
+    position: absolute;
+    z-index: -1;
+
+    img {
+      height: calc(100vh - $navbar-height);
+      max-width: 100%;
+      filter: blur(10px);
+    }
+  }
+}

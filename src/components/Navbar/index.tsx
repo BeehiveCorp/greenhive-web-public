@@ -27,7 +27,7 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    if (windowSize?.width && windowSize.width > 768) {
+    if (windowSize?.width && windowSize.width > 869) {
       setIsExpanded(false);
     }
   }, [windowSize]);
@@ -42,7 +42,7 @@ const Navbar = () => {
     <nav className="nav">
       <div className="outer-container">
         <div className="navbar">
-          <div className="navbar__logo">
+          <div className={`navbar__logo ${isExpanded && '--expanded'}`}>
             <Link href="/">
               <GreenhiveHorizontal
                 color={theme === 'light' ? palette.primary : palette.secondary}

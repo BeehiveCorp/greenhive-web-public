@@ -4,14 +4,14 @@ import { useTheme } from '@/contexts/ThemeContext';
 
 import './styles.scss';
 
-const HomeOuterContent = () => {
+const OuterContent = () => {
   const { toggle } = useTheme();
 
   return (
     <div className="outer-container">
-      <p onClick={toggle}>toggle theme</p>
+      <p onClick={toggle}>toggle</p>
     </div>
   );
 };
 
-export { HomeOuterContent };
+export { OuterContent };

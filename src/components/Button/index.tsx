@@ -24,8 +24,8 @@ const Button: React.FC<ButtonProps> = ({
     <div
       className={`
         button
-        ${primary && 'primary'}
-        ${secondary && theme === 'dark' ? 'secondary' : 'primary'}
+        ${primary ? 'primary' : ''}
+        ${secondary ? (theme === 'dark' ? 'secondary' : 'primary') : ''}
         ${variant}
       `}
       style={style}

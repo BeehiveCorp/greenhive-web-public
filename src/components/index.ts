@@ -1,4 +1,5 @@
 export * from './Logo';
 export * from './Navbar';
-export * from './HomeOuterContent';
+export * from './OuterContent';
 export * from './Button';
+export * from './Hero';
