@@ -1,0 +1,82 @@
+@import '@/theme';
+
+.button {
+  height: $button-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 32px;
+  padding: 0 24px;
+
+  &__text {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  &.solid {
+    @include themed() {
+      background-color: rgba(getColor('title'), 0.2);
+      color: getColor('title');
+    }
+  }
+
+  &.outline {
+    @include themed() {
+      background: transparent;
+      border: 2px solid rgba(getColor('title'), 0.2);
+      color: getColor('title');
+    }
+  }
+
+  &.ghost {
+    @include themed() {
+      background: transparent;
+      color: getColor('title');
+    }
+  }
+
+  &.primary.solid {
+    @include themed() {
+      background-color: rgba(getColor('primary'), 0.09);
+      color: getColor('primary');
+    }
+  }
+
+  &.primary.outline {
+    @include themed() {
+      background: transparent;
+      border: 2px solid rgba(getColor('primary'), 0.1);
+      color: getColor('primary');
+    }
+  }
+
+  &.primary.ghost {
+    @include themed() {
+      background: transparent;
+      color: getColor('primary');
+    }
+  }
+
+  &.secondary.solid {
+    @include themed() {
+      background-color: rgba(getColor('secondary'), 0.09);
+      color: getColor('secondary');
+    }
+  }
+
+  &.secondary.outline {
+    @include themed() {
+      background: transparent;
+      border: 2px solid rgba(getColor('secondary'), 0.1);
+      color: getColor('secondary');
+    }
+  }
+
+  &.secondary.ghost {
+    @include themed() {
+      background: transparent;
+      color: getColor('secondary');
+    }
+  }
+}

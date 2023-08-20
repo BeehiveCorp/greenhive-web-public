@@ -1,7 +1,10 @@
 import * as React from 'react';
 import { SVGProps } from 'react';
 
-export default function Logo({ color = '#fff', ...rest }: SVGProps<SVGSVGElement>) {
+const GreenhiveHorizontal: React.FC<SVGProps<SVGSVGElement>> = ({
+  color = '#fff',
+  ...rest
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -28,4 +31,6 @@ export default function Logo({ color = '#fff', ...rest }: SVGProps<SVGSVGElement
       </defs>
     </svg>
   );
-}
+};
+
+export { GreenhiveHorizontal };

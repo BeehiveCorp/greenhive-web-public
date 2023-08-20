@@ -17,5 +17,5 @@ export const light: Palette = Object.freeze({
   text: '#5b5e55',
   primary: '#3a7347',
   secondary: '#c4d2a0',
-  border: '#DADFCB',
+  border: '#d6dcc6',
 });

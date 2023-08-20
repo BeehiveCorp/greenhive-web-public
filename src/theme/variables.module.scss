@@ -1,5 +1,9 @@
 $navbar-height: 80px;
+$button-height: 44px;
+$input-height: 44px;
 
 :export {
   navbarHeight: $navbar-height;
+  buttonHeight: $button-height;
+  buttonHeight: $input-height;
 }

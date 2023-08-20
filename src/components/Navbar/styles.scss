@@ -3,6 +3,7 @@
 .nav {
   height: $navbar-height;
   backdrop-filter: blur(10px) contrast(100%);
+  max-width: 100vw;
 
   @include themed() {
     background-color: rgba(getColor('background'), 0.9);
@@ -19,13 +20,13 @@
     align-items: center;
     justify-content: space-between;
 
-    .logo {
+    &__logo {
       height: 100%;
       display: flex;
       align-items: center;
     }
 
-    .routes {
+    &__routes {
       @include themed() {
         border: 2px solid getColor('border');
       }
@@ -43,13 +44,147 @@
         padding: 8px 16px;
         border-radius: 32px;
 
-        &.active {
+        &.--active {
           @include themed() {
             color: getColor('title');
             background-color: rgba(getColor('secondary'), 0.02);
             outline: 2px solid getColor('border');
           }
         }
+      }
+
+      &__splash {
+        position: absolute;
+        top: 80px;
+        right: 40px;
+
+        &::after {
+          content: '';
+
+          @include themed() {
+            background-color: getColor('container');
+          }
+
+          overflow: hidden;
+
+          display: block;
+          position: absolute;
+          border-radius: 50%;
+
+          width: 280vmax;
+          height: 280vmax;
+          top: -142vmax;
+          left: -142vmax;
+
+          transform: scale(0);
+          transform-origin: 50% 50%;
+          transition: transform 0.3s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+
+          will-change: transform;
+          z-index: -1;
+        }
+      }
+
+      &__header {
+        display: none;
+        height: $navbar-height;
+      }
+
+      &__corporate-button {
+        display: none;
+        position: absolute;
+        bottom: 40px;
+        left: 40px;
+      }
+    }
+
+    &__toggle-menu {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      &__routes {
+        position: absolute;
+        inset: 0;
+        height: 100vh;
+        border-radius: 0;
+        top: -100vh;
+        flex-direction: column;
+        padding: 40px;
+        padding-top: 0;
+        z-index: 999;
+        overflow: hidden;
+        background: transparent;
+
+        &__route {
+          text-decoration: none;
+          padding: 8px 0;
+          border-radius: 0;
+          height: min-content;
+          font-size: 40px;
+          opacity: 0;
+          transform: scale(0.95);
+          transition-property: opacity, transform;
+          transition-duration: 0.7s;
+          transition-delay: 0.3s;
+          letter-spacing: 6px;
+          text-transform: lowercase;
+
+          &.--active {
+            @include themed() {
+              color: getColor('title');
+              background-color: transparent;
+              outline: none;
+            }
+          }
+        }
+
+        &__header {
+          margin-bottom: 48px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          opacity: 0;
+          transform: scale(0.95);
+          transition-property: opacity, transform;
+          transition-duration: 0.7s;
+          transition-delay: 0.3s;
+        }
+
+        &__corporate-button {
+          display: flex;
+          opacity: 0;
+          transform: scale(0.95);
+          transition-property: opacity, transform;
+          transition-duration: 0.7s;
+          transition-delay: 0.3s;
+        }
+
+        &.--expanded {
+          top: 0;
+
+          .navbar__routes__splash {
+            &::after {
+              transform: scale(1);
+            }
+          }
+
+          .navbar__routes__route,
+          .navbar__routes__header,
+          .navbar__routes__corporate-button {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      }
+
+      &__corporate-button {
+        display: none;
+      }
+
+      &__toggle-menu {
+        display: block;
       }
     }
   }

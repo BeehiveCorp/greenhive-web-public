@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'Greenhive - Home',
 };
 
-import HomeOuterContent from '@/components/HomeOuterContent';
+import { HomeOuterContent } from '@/components';
 
 import './styles.scss';
 

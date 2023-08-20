@@ -4,7 +4,7 @@ import { useTheme } from '@/contexts/ThemeContext';
 
 import './styles.scss';
 
-export default function HomeOuterContent() {
+const HomeOuterContent = () => {
   const { toggle } = useTheme();
 
   return (
@@ -12,4 +12,6 @@ export default function HomeOuterContent() {
       <p onClick={toggle}>toggle theme</p>
     </div>
   );
-}
+};
+
+export { HomeOuterContent };
