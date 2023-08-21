@@ -39,69 +39,84 @@ const Navbar = () => {
   }, [pathname]);
 
   return (
-    <nav className="nav">
-      <div className="outer-container">
-        <div className="navbar">
-          <div className={`navbar__logo ${isExpanded && '--expanded'}`}>
-            <Link href="/">
-              <GreenhiveHorizontal
-                color={theme === 'light' ? palette.primary : palette.secondary}
-              />
-            </Link>
-          </div>
-
-          <div className={`navbar__routes ${isExpanded && '--expanded'}`}>
-            <div className="navbar__routes__header">
-              <div style={{ marginLeft: '-6px' }}>
-                <Link href="/">
-                  <GreenhiveIcon color={palette.title} size={40} />
-                </Link>
-              </div>
-
-              <Button
-                variant="outline"
-                LeftIcon={() => (
-                  <BiX
-                    size={32}
-                    color={theme === 'light' ? palette.primary : palette.secondary}
-                  />
-                )}
-                style={{
-                  width: '44px',
-                  padding: 0,
-                  marginRight: '-2px',
-                  marginBottom: '4px',
-                }}
-                onClick={handleExpandToggle}
-              />
+    <>
+      <nav className="nav">
+        <div className="outer-container">
+          <div className="navbar">
+            <div className={`navbar__logo ${isExpanded && '--expanded'}`}>
+              <Link href="/">
+                <GreenhiveHorizontal
+                  color={theme === 'light' ? palette.primary : palette.secondary}
+                />
+              </Link>
             </div>
 
-            <Link
-              className={`navbar__routes__route ${pathname === '/' && '--active'}`}
-              href="/"
-            >
-              Início
-            </Link>
+            <div className={`navbar__routes ${isExpanded && '--expanded'}`}>
+              <div className="navbar__routes__header">
+                <div style={{ marginLeft: '-6px' }}>
+                  <Link href="/">
+                    <GreenhiveIcon color={palette.title} size={40} />
+                  </Link>
+                </div>
 
-            <Link
-              className={`navbar__routes__route ${
-                pathname === '/corporate' && '--active'
-              }`}
-              href="/corporate"
-            >
-              Corporativo
-            </Link>
+                <Button
+                  variant="outline"
+                  LeftIcon={() => (
+                    <BiX
+                      size={32}
+                      color={theme === 'light' ? palette.primary : palette.secondary}
+                    />
+                  )}
+                  style={{
+                    width: '44px',
+                    padding: 0,
+                    marginRight: '-2px',
+                    marginBottom: '4px',
+                  }}
+                  onClick={handleExpandToggle}
+                />
+              </div>
 
-            <Link
-              className={`navbar__routes__route ${
-                pathname === '/blog' && '--active'
-              }`}
-              href="/blog"
-            >
-              Blog
-            </Link>
+              <Link
+                className={`navbar__routes__route ${pathname === '/' && '--active'}`}
+                href="/"
+              >
+                Início
+              </Link>
 
-            <div className="navbar__routes__corporate-button">
+              <Link
+                className={`navbar__routes__route ${
+                  pathname === '/corporate' && '--active'
+                }`}
+                href="/corporate"
+              >
+                Corporativo
+              </Link>
+
+              <Link
+                className={`navbar__routes__route ${
+                  pathname === '/blog' && '--active'
+                }`}
+                href="/blog"
+              >
+                Blog
+              </Link>
+
+              <div className="navbar__routes__corporate-button">
+                <Button
+                  variant="ghost"
+                  secondary
+                  text="LOGIN CORPORATIVO"
+                  onClick={() => alert('not implemented yet')}
+                  RightIcon={() => <BiLogIn size={24} />}
+                  style={{ padding: 0 }}
+                />
+              </div>
+
+              <div className="navbar__routes__splash"></div>
+            </div>
+
+            <div className="navbar__corporate-button">
               <Button
                 variant="ghost"
                 secondary
@@ -112,36 +127,25 @@ const Navbar = () => {
               />
             </div>
 
-            <div className="navbar__routes__splash"></div>
-          </div>
-
-          <div className="navbar__corporate-button">
-            <Button
-              variant="ghost"
-              secondary
-              text="LOGIN CORPORATIVO"
-              onClick={() => alert('not implemented yet')}
-              RightIcon={() => <BiLogIn size={24} />}
-              style={{ padding: 0 }}
-            />
-          </div>
-
-          <div className="navbar__toggle-menu">
-            <Button
-              variant="outline"
-              LeftIcon={() => (
-                <BiMenu
-                  size={24}
-                  color={theme === 'light' ? palette.primary : palette.secondary}
-                />
-              )}
-              style={{ width: '44px', padding: 0 }}
-              onClick={handleExpandToggle}
-            />
+            <div className="navbar__toggle-menu">
+              <Button
+                variant="outline"
+                LeftIcon={() => (
+                  <BiMenu
+                    size={24}
+                    color={theme === 'light' ? palette.primary : palette.secondary}
+                  />
+                )}
+                style={{ width: '44px', padding: 0 }}
+                onClick={handleExpandToggle}
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      <div className={`blur ${isExpanded && '--expanded'}`}></div>
+    </>
   );
 };
 

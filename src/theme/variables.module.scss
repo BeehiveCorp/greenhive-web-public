@@ -2,6 +2,12 @@ $navbar-height: 80px;
 $button-height: 44px;
 $input-height: 44px;
 
+$smallest-bp: 369px;
+$small-bp: 469px;
+$medium-bp: 769px;
+$big-bp: 869px;
+$biggest-bp: 1200px;
+
 :export {
   navbarHeight: $navbar-height;
   buttonHeight: $button-height;

@@ -70,8 +70,9 @@
 
           @include themed() {
             background-color: rgba(getColor('container'), 0.98);
-            backdrop-filter: blur(20px) contrast(100%);
           }
+
+          backdrop-filter: blur(16px) saturate(100%);
 
           overflow: hidden;
 
@@ -110,7 +111,7 @@
       display: none;
     }
 
-    @media (max-width: 869px) {
+    @media (max-width: $big-bp) {
       &__routes {
         position: absolute;
         inset: 0;
@@ -189,5 +190,19 @@
         display: block;
       }
     }
+  }
+}
+
+.blur {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(4px) saturate(100%);
+  z-index: 999;
+  transition: 1s;
+  opacity: 0;
+  pointer-events: none;
+
+  &.--expanded {
+    opacity: 1;
   }
 }

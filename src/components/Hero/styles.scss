@@ -1,19 +1,21 @@
 @import '@/theme';
 
 .hero {
-  height: calc(100vh - $navbar-height);
+  height: calc(86vh - $navbar-height);
   display: grid;
   align-items: center;
   grid-template-columns: repeat(8, 1fr);
+  cursor: none;
 
   &__content {
     grid-row: 1;
-    grid-column: 1 / span 4;
+    grid-column: 1 / span 5;
     z-index: 10;
 
     .title {
       font-size: 4rem;
       margin-bottom: 40px;
+      font-weight: 500;
 
       @include themed() {
         color: getColor('title');
@@ -21,7 +23,6 @@
     }
 
     .text {
-      width: 65%;
       font-size: 1.2rem;
       line-height: 1.8rem;
     }
@@ -31,16 +32,113 @@
       gap: 8px;
       margin-top: 80px;
     }
+
+    @media (max-width: calc($big-bp + 100px)) {
+      grid-column: 1 / span 8;
+    }
+
+    @media (max-width: $medium-bp) {
+      .title {
+        font-size: 3rem;
+      }
+
+      .text {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: $small-bp) {
+      .title {
+        font-size: 2rem;
+      }
+
+      .text {
+        font-size: 0.8rem;
+        line-height: 1.4rem;
+      }
+    }
   }
 
   &__gif {
     position: absolute;
-    z-index: -1;
+    inset: 0;
+    left: 20%;
 
-    img {
-      height: calc(100vh - $navbar-height);
-      max-width: 100%;
-      filter: blur(10px);
+    height: calc(86vh - $navbar-height);
+
+    background-image: url('/hero-background.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.3;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(16px);
+      pointer-events: none;
+    }
+  }
+
+  &__vertical-gradient {
+    position: absolute;
+    inset: 0;
+    left: 20%;
+
+    @include themed() {
+      background: linear-gradient(
+        getColor('background'),
+        rgba(getColor('background'), 0)
+      );
+    }
+  }
+
+  &__horizontal-gradient {
+    position: absolute;
+    inset: 0;
+    left: 20%;
+
+    @include themed() {
+      background: linear-gradient(
+        90deg,
+        getColor('background'),
+        rgba(getColor('background'), 0)
+      );
+    }
+  }
+
+  &__cursor-round {
+    pointer-events: none;
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+
+    @include themed() {
+      outline: 2px solid getColor('primary');
+    }
+  }
+
+  &__cursor-pointer {
+    pointer-events: none;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+
+    @include themed() {
+      background-color: getColor('primary');
+    }
+  }
+
+  @media (max-width: $small-bp) {
+    &__cursor-round,
+    &__cursor-pointer {
+      display: none;
     }
   }
 }

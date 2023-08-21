@@ -2,15 +2,42 @@
 
 import { BiLogoAndroid, BiLogoApple } from 'react-icons/bi';
 
+import { kyivTypeSans } from '@/app/fonts';
+import { useTheme } from '@/contexts/ThemeContext';
+
 import { Button } from '../Button';
 
 import './styles.scss';
+import { useMouse } from '@uidotdev/usehooks';
+import { useEffect, useRef } from 'react';
 
 const Hero = () => {
+  const { theme } = useTheme();
+  const mouse = useMouse()[0];
+
+  const cursorRoundRef = useRef<HTMLDivElement>(null);
+  const cursorPointerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (cursorPointerRef?.current?.style) {
+      cursorPointerRef.current.style.left = `${mouse.x}px`;
+      cursorPointerRef.current.style.top = `${mouse.y - 82}px`;
+
+      setTimeout(() => {
+        if (cursorRoundRef?.current?.style) {
+          cursorRoundRef.current.style.left = `${mouse.x}px`;
+          cursorRoundRef.current.style.top = `${mouse.y - 82}px`;
+        }
+      }, 100);
+    }
+  }, [mouse]);
+
   return (
     <section className="container hero">
       <div className="hero__content">
-        <h1 className="title">Aprenda e ganhe com o meio ambiente</h1>
+        <h1 className="title" style={kyivTypeSans.style}>
+          APRENDA E GANHE COM O MEIO AMBIENTE
+        </h1>
 
         <p className="text">
           Baixe agora! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
@@ -32,9 +59,15 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="hero__gif">
-        <img src="/hero-background.gif" alt="Gif da floresta" />
-      </div>
+      <>
+        <div className="hero__gif"></div>
+        <div className="hero__horizontal-gradient"></div>
+        {theme === 'dark' && <div className="hero__vertical-gradient"></div>}
+        <div className="hero__blur"></div>
+      </>
+
+      <div ref={cursorRoundRef} className="hero__cursor-round"></div>
+      <div ref={cursorPointerRef} className="hero__cursor-pointer"></div>
     </section>
   );
 };

@@ -1,12 +1,7 @@
 'use client';
 
-import localFont from 'next/font/local';
-import { Montserrat } from 'next/font/google';
-
-const montserrat = Montserrat({ subsets: ['latin'] });
-const kyivTypeSans = localFont({ src: '../assets/fonts/KyivType-Sans-Medium-.otf' });
-
 import { Providers } from './providers';
+import { montserrat } from './fonts';
 
 import { Navbar } from '@/components';
 
