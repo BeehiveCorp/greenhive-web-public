@@ -6,5 +6,47 @@
   top: $navbar-height;
   display: flex;
   align-items: center;
-  z-index: 0;
+  z-index: 1;
+
+  div {
+    position: absolute;
+  }
+
+  .left-content {
+    left: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .right-content {
+    right: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    &__social {
+      font-weight: 400;
+      font-size: 1.2rem;
+      display: flex;
+      gap: 16px;
+      writing-mode: vertical-lr;
+      transform: rotateZ(180deg);
+
+      @include themed {
+        color: getColor('title');
+      }
+
+      a {
+        color: inherit;
+        transition: 0.3s;
+
+        &:hover {
+          @include themed {
+            color: getColor('primary');
+          }
+        }
+      }
+    }
+  }
 }

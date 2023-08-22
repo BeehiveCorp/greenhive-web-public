@@ -1,12 +1,26 @@
+@import './index.scss';
+
 .outer-container {
-  max-width: 1200px;
+  max-width: $biggest-bp;
   // border: 1px solid rgba(0, 128, 0, 0.117);
   margin: 0 auto;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: $biggest-bp) {
   .outer-container {
     margin: 0 40px;
+  }
+}
+
+@media (max-width: $medium-bp) {
+  .outer-container {
+    margin: 0 24px;
+  }
+}
+
+@media (max-width: $small-bp) {
+  .outer-container {
+    margin: 0 16px;
   }
 }
 
@@ -14,10 +28,12 @@
   max-width: 1040px;
   // border: 1px solid rgba(255, 0, 0, 0.115);
   margin: 0 auto;
-}
 
-@media (max-width: 1200px) {
-  .container {
-    margin: 0 108px;
+  @media (max-width: $medium-bp) {
+    margin: 0 80px !important;
+  }
+
+  @media (max-width: $biggest-bp) {
+    margin: 0 120px;
   }
 }

@@ -2,6 +2,8 @@
 
 import { useTheme } from '@/contexts/ThemeContext';
 
+import { ThemeSwitcher } from '../ThemeSwitcher';
+
 import './styles.scss';
 
 const OuterContent = () => {
@@ -9,7 +11,25 @@ const OuterContent = () => {
 
   return (
     <div className="outer-container">
-      <p onClick={toggle}>toggle</p>
+      <div className="left-content">
+        <ThemeSwitcher />
+      </div>
+
+      <div className="right-content">
+        <p className="right-content__social">
+          <span>siga-nos</span>
+          <span>•</span>
+          <a href="http://" target="_blank">
+            ig /
+          </a>
+          <a href="http://" target="_blank">
+            tw /
+          </a>
+          <a href="http://" target="_blank">
+            yt /
+          </a>
+        </p>
+      </div>
     </div>
   );
 };
