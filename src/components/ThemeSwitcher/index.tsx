@@ -1,17 +1,15 @@
-'use client';
+'use client'
 
-import { BiSun, BiSolidSun, BiMoon, BiSolidMoon } from 'react-icons/bi';
+import { BiSun, BiSolidSun, BiMoon, BiSolidMoon } from 'react-icons/bi'
 
-import { useTheme } from '@/contexts/ThemeContext';
+import { useTheme } from '@/contexts/ThemeContext'
 
-import { ThemeSwitcherProps } from './types';
+import './styles.scss'
 
-import './styles.scss';
+const ThemeSwitcher: React.FC = () => {
+  const { theme, toggle, palette } = useTheme()
 
-const ThemeSwitcher: React.FC<ThemeSwitcherProps> = () => {
-  const { theme, toggle, palette } = useTheme();
-
-  const isDarkMode = theme === 'dark';
+  const isDarkMode = theme === 'dark'
 
   return (
     <div
@@ -19,7 +17,9 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = () => {
       onClick={toggle}
       role="button"
     >
-      <div className={`theme-switcher__circle ${isDarkMode ? 'dark' : 'light'}`} />
+      <div
+        className={`theme-switcher__circle ${isDarkMode ? 'dark' : 'light'}`}
+      />
 
       {isDarkMode ? (
         <BiSun color={palette.title} />
@@ -33,7 +33,7 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = () => {
         <BiSolidMoon color={palette.background} />
       )}
     </div>
-  );
-};
+  )
+}
 
-export { ThemeSwitcher };
+export { ThemeSwitcher }

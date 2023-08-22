@@ -1,4 +1,4 @@
-import { Metadata } from "next"
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Blog - Greenhive',
@@ -11,7 +11,5 @@ export default async function Blog() {
   //   }
   // })
 
-  return (
-    <h1>Blog</h1>
-  )
+  return <h1>Blog</h1>
 }

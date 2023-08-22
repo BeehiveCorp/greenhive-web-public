@@ -1,58 +1,59 @@
-'use client';
+'use client'
 
-import { useEffect, useRef } from 'react';
-import { useMouse } from '@uidotdev/usehooks';
-import { BiLogoAndroid, BiLogoApple } from 'react-icons/bi';
+import { useEffect, useRef } from 'react'
+import { useMouse } from '@uidotdev/usehooks'
+import { BiLogoAndroid, BiLogoApple } from 'react-icons/bi'
 
-import { kyivTypeSans } from '@/app/fonts';
-import { useTheme } from '@/contexts/ThemeContext';
+import { kyivTypeSans } from '@/app/fonts'
+import { useTheme } from '@/contexts/ThemeContext'
 
-import { Button } from '../Button';
+import { Button } from '../Button'
 
-import './styles.scss';
+import './styles.scss'
 
-const targetClasses = ['theme-switcher', 'button', 'buttons'];
+const targetClasses = ['theme-switcher', 'button', 'buttons']
 
 const Hero = () => {
-  const { theme } = useTheme();
-  const mouse = useMouse()[0];
+  const { theme } = useTheme()
+  const mouse = useMouse()[0]
 
-  const cursorRoundRef = useRef<HTMLDivElement>(null);
-  const cursorPointerRef = useRef<HTMLDivElement>(null);
+  const cursorRoundRef = useRef<HTMLDivElement>(null)
+  const cursorPointerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const verifyOveredElement = () => {
-      if (!cursorPointerRef?.current?.style || !cursorRoundRef?.current?.style) return;
-  
-      const isOverSomeElement = targetClasses.some((className) => {
-        const elements = document.querySelectorAll(`.${className}`);
-        return Array.from(elements).some((element) => element.matches(':hover'));
-      });
-  
-      if (isOverSomeElement) {
-        console.log('Mouse is over the element now.');
-        cursorPointerRef.current.style.opacity = '0';
-        cursorRoundRef.current.style.opacity = '0';
-      } else {
-        cursorPointerRef.current.style.opacity = '1';
-        cursorRoundRef.current.style.opacity = '1';
-      }
-    };
-    
-    if (cursorPointerRef?.current?.style) {
-      verifyOveredElement();
+      if (!cursorPointerRef?.current?.style || !cursorRoundRef?.current?.style)
+        return
 
-      cursorPointerRef.current.style.left = `${mouse.x}px`;
-      cursorPointerRef.current.style.top = `${mouse.y - 82}px`;
+      const isOverSomeElement = targetClasses.some((className) => {
+        const elements = document.querySelectorAll(`.${className}`)
+        return Array.from(elements).some((element) => element.matches(':hover'))
+      })
+
+      if (isOverSomeElement) {
+        console.log('Mouse is over the element now.')
+        cursorPointerRef.current.style.opacity = '0'
+        cursorRoundRef.current.style.opacity = '0'
+      } else {
+        cursorPointerRef.current.style.opacity = '1'
+        cursorRoundRef.current.style.opacity = '1'
+      }
+    }
+
+    if (cursorPointerRef?.current?.style) {
+      verifyOveredElement()
+
+      cursorPointerRef.current.style.left = `${mouse.x}px`
+      cursorPointerRef.current.style.top = `${mouse.y - 82}px`
 
       setTimeout(() => {
         if (cursorRoundRef?.current?.style) {
-          cursorRoundRef.current.style.left = `${mouse.x}px`;
-          cursorRoundRef.current.style.top = `${mouse.y - 82}px`;
+          cursorRoundRef.current.style.left = `${mouse.x}px`
+          cursorRoundRef.current.style.top = `${mouse.y - 82}px`
         }
-      }, 100);
+      }, 100)
     }
-  }, [mouse]);
+  }, [mouse])
 
   return (
     <section className="container hero">
@@ -62,8 +63,8 @@ const Hero = () => {
         </h1>
 
         <p className="text">
-          Baixe agora! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-          auctor justo in.
+          Baixe agora! Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Sed auctor justo in.
         </p>
 
         <div className="buttons">
@@ -91,7 +92,7 @@ const Hero = () => {
       <div ref={cursorRoundRef} className="hero__cursor-round"></div>
       <div ref={cursorPointerRef} className="hero__cursor-pointer"></div>
     </section>
-  );
-};
+  )
+}
 
-export { Hero };
+export { Hero }

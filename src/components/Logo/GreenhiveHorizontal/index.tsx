@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import * as React from 'react'
+import { SVGProps } from 'react'
 
 const GreenhiveHorizontal: React.FC<SVGProps<SVGSVGElement>> = ({
   color = '#fff',
@@ -30,7 +30,7 @@ const GreenhiveHorizontal: React.FC<SVGProps<SVGSVGElement>> = ({
         </clipPath>
       </defs>
     </svg>
-  );
-};
+  )
+}
 
-export { GreenhiveHorizontal };
+export { GreenhiveHorizontal }

@@ -1,2 +1,2 @@
-export * from './GreenhiveHorizontal';
-export * from './GreenhiveIcon';
+export * from './GreenhiveHorizontal'
+export * from './GreenhiveIcon'

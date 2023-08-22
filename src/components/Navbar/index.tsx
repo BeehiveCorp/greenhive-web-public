@@ -1,75 +1,75 @@
-'use client';
+'use client'
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react'
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { BiLogIn, BiMenu, BiX } from 'react-icons/bi';
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { BiLogIn, BiMenu, BiX } from 'react-icons/bi'
 
 import {
   useWindowSize,
   useIsFirstRender,
   useWindowScroll,
-} from '@uidotdev/usehooks';
+} from '@uidotdev/usehooks'
 
-import { useTheme } from '@/contexts/ThemeContext';
+import { useTheme } from '@/contexts/ThemeContext'
 
-import { GreenhiveHorizontal, GreenhiveIcon } from '../Logo';
-import { Button } from '../Button';
+import { GreenhiveHorizontal, GreenhiveIcon } from '../Logo'
+import { Button } from '../Button'
 
-import './styles.scss';
+import './styles.scss'
 
 const Navbar = () => {
-  const { palette, theme } = useTheme();
-  const pathname = usePathname();
-  const windowSize = useWindowSize();
-  const windowScroll = useWindowScroll()[0];
-  const isFirstRender = useIsFirstRender();
-  const navRef = useRef<HTMLDivElement>(null);
+  const { palette, theme } = useTheme()
+  const pathname = usePathname()
+  const windowSize = useWindowSize()
+  const windowScroll = useWindowScroll()[0]
+  const isFirstRender = useIsFirstRender()
+  const navRef = useRef<HTMLDivElement>(null)
 
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [lastScroll, setLastScroll] = useState(0);
+  const [isExpanded, setIsExpanded] = useState(false)
+  const [lastScroll, setLastScroll] = useState(0)
 
   const handleExpandToggle = () => {
-    setIsExpanded((prev) => !prev);
-  };
+    setIsExpanded((prev) => !prev)
+  }
 
   useEffect(() => {
     if (windowSize?.width && windowSize.width > 869) {
-      setIsExpanded(false);
+      setIsExpanded(false)
     }
-  }, [windowSize]);
+  }, [windowSize])
 
   useEffect(() => {
     const validateHeader = () => {
-      if (!navRef?.current) return;
-  
-      const windowY = window.scrollY;
-      const windowH = window.innerHeight;
-      const scrollThreshold = windowH * 0.8;
-  
-      const isPastThreshold = windowY > scrollThreshold;
-  
+      if (!navRef?.current) return
+
+      const windowY = window.scrollY
+      const windowH = window.innerHeight
+      const scrollThreshold = windowH * 0.8
+
+      const isPastThreshold = windowY > scrollThreshold
+
       if (isPastThreshold) {
-        navRef.current.classList.add('--is-fixed');
-  
-        const isScrollingUp = windowY < lastScroll;
-        navRef.current.classList.toggle('--scrolling-up', isScrollingUp);
+        navRef.current.classList.add('--is-fixed')
+
+        const isScrollingUp = windowY < lastScroll
+        navRef.current.classList.toggle('--scrolling-up', isScrollingUp)
       } else {
-        navRef.current.classList.remove('--is-fixed', '--scrolling-up');
+        navRef.current.classList.remove('--is-fixed', '--scrolling-up')
       }
-  
-      setLastScroll(windowY);
-    };
-    
-    validateHeader();
-  }, [lastScroll, windowScroll]);
+
+      setLastScroll(windowY)
+    }
+
+    validateHeader()
+  }, [lastScroll, windowScroll])
 
   useEffect(() => {
     if (!isFirstRender) {
-      handleExpandToggle();
+      handleExpandToggle()
     }
-  }, [isFirstRender, pathname]);
+  }, [isFirstRender, pathname])
 
   return (
     <>
@@ -79,7 +79,9 @@ const Navbar = () => {
             <div className={`navbar__logo ${isExpanded && '--expanded'}`}>
               <Link href="/">
                 <GreenhiveHorizontal
-                  color={theme === 'light' ? palette.primary : palette.secondary}
+                  color={
+                    theme === 'light' ? palette.primary : palette.secondary
+                  }
                 />
               </Link>
             </div>
@@ -97,7 +99,9 @@ const Navbar = () => {
                   LeftIcon={() => (
                     <BiX
                       size={32}
-                      color={theme === 'light' ? palette.primary : palette.secondary}
+                      color={
+                        theme === 'light' ? palette.primary : palette.secondary
+                      }
                     />
                   )}
                   style={{
@@ -111,7 +115,9 @@ const Navbar = () => {
               </div>
 
               <Link
-                className={`navbar__routes__route ${pathname === '/' && '--active'}`}
+                className={`navbar__routes__route ${
+                  pathname === '/' && '--active'
+                }`}
                 href="/"
               >
                 Início
@@ -166,7 +172,9 @@ const Navbar = () => {
                 LeftIcon={() => (
                   <BiMenu
                     size={24}
-                    color={theme === 'light' ? palette.primary : palette.secondary}
+                    color={
+                      theme === 'light' ? palette.primary : palette.secondary
+                    }
                   />
                 )}
                 style={{ width: '44px', padding: 0 }}
@@ -179,7 +187,7 @@ const Navbar = () => {
 
       <div className={`blur ${isExpanded && '--expanded'}`}></div>
     </>
-  );
-};
+  )
+}
 
-export { Navbar };
+export { Navbar }

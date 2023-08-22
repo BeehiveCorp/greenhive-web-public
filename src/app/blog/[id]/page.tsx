@@ -1,7 +1,7 @@
 interface ArticleProps {
   params: {
-    id: string;
-  };
+    id: string
+  }
 }
 
 export function generateMetadata() {
@@ -13,7 +13,7 @@ export function generateMetadata() {
 
   return {
     title: 'Greenhive | Algum artigo',
-  };
+  }
 }
 
 export default function Article({ params }: ArticleProps) {
@@ -23,5 +23,5 @@ export default function Article({ params }: ArticleProps) {
   //   }
   // })
 
-  return <h4>Article id: {params?.id}</h4>;
+  return <h4>Article id: {params?.id}</h4>
 }

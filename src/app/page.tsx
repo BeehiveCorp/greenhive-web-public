@@ -1,12 +1,12 @@
-import { Metadata } from 'next';
+import { Metadata } from 'next'
+
+import { OuterContent, Hero } from '@/components'
+
+import './styles.scss'
 
 export const metadata: Metadata = {
   title: 'Greenhive - Home',
-};
-
-import { OuterContent, Hero } from '@/components';
-
-import './styles.scss';
+}
 
 export default function Home() {
   return (
@@ -16,5 +16,5 @@ export default function Home() {
 
       <div style={{ height: '1000px' }}></div>
     </section>
-  );
+  )
 }

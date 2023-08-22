@@ -1,14 +1,10 @@
-'use client';
+'use client'
 
-import { useTheme } from '@/contexts/ThemeContext';
+import { ThemeSwitcher } from '../ThemeSwitcher'
 
-import { ThemeSwitcher } from '../ThemeSwitcher';
-
-import './styles.scss';
+import './styles.scss'
 
 const OuterContent = () => {
-  const { toggle } = useTheme();
-
   return (
     <div className="outer-container">
       <div className="left-content">
@@ -19,19 +15,19 @@ const OuterContent = () => {
         <p className="right-content__social">
           <span>siga-nos</span>
           <span>•</span>
-          <a href="http://" target="_blank">
+          <a href="http://" target="_blank" rel="noreferrer">
             ig /
           </a>
-          <a href="http://" target="_blank">
+          <a href="http://" target="_blank" rel="noreferrer">
             tw /
           </a>
-          <a href="http://" target="_blank">
+          <a href="http://" target="_blank" rel="noreferrer">
             yt /
           </a>
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export { OuterContent };
+export { OuterContent }

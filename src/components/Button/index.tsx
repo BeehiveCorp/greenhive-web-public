@@ -1,12 +1,12 @@
-'use client';
+'use client'
 
-import React from 'react';
+import React from 'react'
 
-import { useTheme } from '@/contexts/ThemeContext';
+import { useTheme } from '@/contexts/ThemeContext'
 
-import { ButtonProps } from './types';
+import { ButtonProps } from './types'
 
-import './styles.scss';
+import './styles.scss'
 
 const Button: React.FC<ButtonProps> = ({
   text,
@@ -18,7 +18,7 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   style,
 }) => {
-  const { theme } = useTheme();
+  const { theme } = useTheme()
 
   return (
     <div
@@ -38,7 +38,7 @@ const Button: React.FC<ButtonProps> = ({
 
       {RightIcon && <RightIcon />}
     </div>
-  );
-};
+  )
+}
 
-export { Button };
+export { Button }

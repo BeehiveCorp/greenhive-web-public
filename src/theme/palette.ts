@@ -1,4 +1,4 @@
-import { Palette } from './types';
+import { Palette } from './types'
 
 export const dark: Palette = Object.freeze({
   background: '#080c0a',
@@ -8,7 +8,7 @@ export const dark: Palette = Object.freeze({
   primary: '#3a7347',
   secondary: '#c4d2a0',
   border: '#101410',
-});
+})
 
 export const light: Palette = Object.freeze({
   background: '#dee2d4',
@@ -18,4 +18,4 @@ export const light: Palette = Object.freeze({
   primary: '#3a7347',
   secondary: '#c4d2a0',
   border: '#d6dcc6',
-});
+})
