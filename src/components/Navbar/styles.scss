@@ -123,6 +123,15 @@
         padding-top: 0;
         overflow: hidden;
         background: transparent;
+        background-color: green;
+
+        @media (max-width: $medium-bp) {
+          padding: 0 24px;
+        }
+
+        @media (max-width: $small-bp) {
+          padding: 0 16px;
+        }
 
         &__route {
           text-decoration: none;

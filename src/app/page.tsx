@@ -13,6 +13,8 @@ export default function Home() {
     <section className="home">
       <OuterContent />
       <Hero />
+
+      <div style={{ height: '1000px' }}></div>
     </section>
   );
 }

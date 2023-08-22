@@ -18,8 +18,30 @@ const Hero = () => {
   const cursorRoundRef = useRef<HTMLDivElement>(null);
   const cursorPointerRef = useRef<HTMLDivElement>(null);
 
+  var element = document.querySelector('.theme-switcher');
+
+  const verifyOveredElement = (targetClass: string[]) => {
+    if (!cursorPointerRef?.current?.style || !cursorRoundRef?.current?.style) return;
+
+    const isOverSomeElement = targetClass.some((className) => {
+      const elements = document.querySelectorAll(`.${className}`);
+      return Array.from(elements).some((element) => element.matches(':hover'));
+    });
+
+    if (isOverSomeElement) {
+      console.log('Mouse is over the element now.');
+      cursorPointerRef.current.style.opacity = '0';
+      cursorRoundRef.current.style.opacity = '0';
+    } else {
+      cursorPointerRef.current.style.opacity = '1';
+      cursorRoundRef.current.style.opacity = '1';
+    }
+  };
+
   useEffect(() => {
     if (cursorPointerRef?.current?.style) {
+      verifyOveredElement(['theme-switcher', 'button', 'buttons']);
+
       cursorPointerRef.current.style.left = `${mouse.x}px`;
       cursorPointerRef.current.style.top = `${mouse.y - 82}px`;
 
