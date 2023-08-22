@@ -1,11 +1,15 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { BiLogIn, BiMenu, BiX } from 'react-icons/bi';
-import { useWindowSize, useIsFirstRender } from '@uidotdev/usehooks';
+import {
+  useWindowSize,
+  useIsFirstRender,
+  useWindowScroll,
+} from '@uidotdev/usehooks';
 
 import { useTheme } from '@/contexts/ThemeContext';
 
@@ -18,12 +22,36 @@ const Navbar = () => {
   const { palette, theme } = useTheme();
   const pathname = usePathname();
   const windowSize = useWindowSize();
+  const windowScroll = useWindowScroll()[0];
   const isFirstRender = useIsFirstRender();
+  const navRef = useRef<HTMLDivElement>(null);
 
   const [isExpanded, setIsExpanded] = useState(false);
+  const [lastScroll, setLastScroll] = useState(0);
 
   const handleExpandToggle = () => {
     setIsExpanded((prev) => !prev);
+  };
+
+  const validateHeader = () => {
+    if (!navRef?.current) return;
+
+    const windowY = window.scrollY;
+    const windowH = window.innerHeight;
+    const scrollThreshold = windowH * 0.8;
+
+    const isPastThreshold = windowY > scrollThreshold;
+
+    if (isPastThreshold) {
+      navRef.current.classList.add('--is-fixed');
+
+      const isScrollingUp = windowY < lastScroll;
+      navRef.current.classList.toggle('--scrolling-up', isScrollingUp);
+    } else {
+      navRef.current.classList.remove('--is-fixed', '--scrolling-up');
+    }
+
+    setLastScroll(windowY);
   };
 
   useEffect(() => {
@@ -33,6 +61,10 @@ const Navbar = () => {
   }, [windowSize]);
 
   useEffect(() => {
+    validateHeader();
+  }, [windowScroll]);
+
+  useEffect(() => {
     if (!isFirstRender) {
       handleExpandToggle();
     }
@@ -40,7 +72,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="nav">
+      <nav className="nav" ref={navRef}>
         <div className="outer-container">
           <div className="navbar">
             <div className={`navbar__logo ${isExpanded && '--expanded'}`}>

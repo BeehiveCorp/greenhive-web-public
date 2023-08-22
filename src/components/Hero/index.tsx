@@ -18,12 +18,12 @@ const Hero = () => {
   const cursorRoundRef = useRef<HTMLDivElement>(null);
   const cursorPointerRef = useRef<HTMLDivElement>(null);
 
-  var element = document.querySelector('.theme-switcher');
+  const targetClasses = ['theme-switcher', 'button', 'buttons'];
 
-  const verifyOveredElement = (targetClass: string[]) => {
+  const verifyOveredElement = () => {
     if (!cursorPointerRef?.current?.style || !cursorRoundRef?.current?.style) return;
 
-    const isOverSomeElement = targetClass.some((className) => {
+    const isOverSomeElement = targetClasses.some((className) => {
       const elements = document.querySelectorAll(`.${className}`);
       return Array.from(elements).some((element) => element.matches(':hover'));
     });
@@ -40,7 +40,7 @@ const Hero = () => {
 
   useEffect(() => {
     if (cursorPointerRef?.current?.style) {
-      verifyOveredElement(['theme-switcher', 'button', 'buttons']);
+      verifyOveredElement();
 
       cursorPointerRef.current.style.left = `${mouse.x}px`;
       cursorPointerRef.current.style.top = `${mouse.y - 82}px`;

@@ -2,10 +2,23 @@
 
 .nav {
   height: $navbar-height;
-  backdrop-filter: blur(10px) contrast(100%);
+  backdrop-filter: blur(16px) contrast(200%);
   max-width: 100vw;
+  width: 100%;
   z-index: 99999;
-  position: relative;
+  position: fixed;
+  top: 0;
+  transition:
+    transform 0.3s ease,
+    visibility 0s 0.3s linear;
+
+  &.--is-fixed {
+    transform: translate3d(0, -100%, 0);
+  }
+
+  &.--scrolling-up {
+    transform: translate3d(0, 0, 0);
+  }
 
   @include themed() {
     background-color: rgba(getColor('background'), 0.9);
@@ -123,7 +136,6 @@
         padding-top: 0;
         overflow: hidden;
         background: transparent;
-        background-color: green;
 
         @media (max-width: $medium-bp) {
           padding: 0 24px;
