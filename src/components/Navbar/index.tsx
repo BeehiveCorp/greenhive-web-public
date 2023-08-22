@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { BiLogIn, BiMenu, BiX } from 'react-icons/bi';
+
 import {
   useWindowSize,
   useIsFirstRender,
@@ -33,27 +34,6 @@ const Navbar = () => {
     setIsExpanded((prev) => !prev);
   };
 
-  const validateHeader = () => {
-    if (!navRef?.current) return;
-
-    const windowY = window.scrollY;
-    const windowH = window.innerHeight;
-    const scrollThreshold = windowH * 0.8;
-
-    const isPastThreshold = windowY > scrollThreshold;
-
-    if (isPastThreshold) {
-      navRef.current.classList.add('--is-fixed');
-
-      const isScrollingUp = windowY < lastScroll;
-      navRef.current.classList.toggle('--scrolling-up', isScrollingUp);
-    } else {
-      navRef.current.classList.remove('--is-fixed', '--scrolling-up');
-    }
-
-    setLastScroll(windowY);
-  };
-
   useEffect(() => {
     if (windowSize?.width && windowSize.width > 869) {
       setIsExpanded(false);
@@ -61,14 +41,35 @@ const Navbar = () => {
   }, [windowSize]);
 
   useEffect(() => {
+    const validateHeader = () => {
+      if (!navRef?.current) return;
+  
+      const windowY = window.scrollY;
+      const windowH = window.innerHeight;
+      const scrollThreshold = windowH * 0.8;
+  
+      const isPastThreshold = windowY > scrollThreshold;
+  
+      if (isPastThreshold) {
+        navRef.current.classList.add('--is-fixed');
+  
+        const isScrollingUp = windowY < lastScroll;
+        navRef.current.classList.toggle('--scrolling-up', isScrollingUp);
+      } else {
+        navRef.current.classList.remove('--is-fixed', '--scrolling-up');
+      }
+  
+      setLastScroll(windowY);
+    };
+    
     validateHeader();
-  }, [windowScroll]);
+  }, [lastScroll, windowScroll]);
 
   useEffect(() => {
     if (!isFirstRender) {
       handleExpandToggle();
     }
-  }, [pathname]);
+  }, [isFirstRender, pathname]);
 
   return (
     <>

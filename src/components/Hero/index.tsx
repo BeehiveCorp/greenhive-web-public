@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
+import { useMouse } from '@uidotdev/usehooks';
 import { BiLogoAndroid, BiLogoApple } from 'react-icons/bi';
 
 import { kyivTypeSans } from '@/app/fonts';
@@ -8,8 +10,8 @@ import { useTheme } from '@/contexts/ThemeContext';
 import { Button } from '../Button';
 
 import './styles.scss';
-import { useMouse } from '@uidotdev/usehooks';
-import { useEffect, useRef } from 'react';
+
+const targetClasses = ['theme-switcher', 'button', 'buttons'];
 
 const Hero = () => {
   const { theme } = useTheme();
@@ -18,27 +20,25 @@ const Hero = () => {
   const cursorRoundRef = useRef<HTMLDivElement>(null);
   const cursorPointerRef = useRef<HTMLDivElement>(null);
 
-  const targetClasses = ['theme-switcher', 'button', 'buttons'];
-
-  const verifyOveredElement = () => {
-    if (!cursorPointerRef?.current?.style || !cursorRoundRef?.current?.style) return;
-
-    const isOverSomeElement = targetClasses.some((className) => {
-      const elements = document.querySelectorAll(`.${className}`);
-      return Array.from(elements).some((element) => element.matches(':hover'));
-    });
-
-    if (isOverSomeElement) {
-      console.log('Mouse is over the element now.');
-      cursorPointerRef.current.style.opacity = '0';
-      cursorRoundRef.current.style.opacity = '0';
-    } else {
-      cursorPointerRef.current.style.opacity = '1';
-      cursorRoundRef.current.style.opacity = '1';
-    }
-  };
-
   useEffect(() => {
+    const verifyOveredElement = () => {
+      if (!cursorPointerRef?.current?.style || !cursorRoundRef?.current?.style) return;
+  
+      const isOverSomeElement = targetClasses.some((className) => {
+        const elements = document.querySelectorAll(`.${className}`);
+        return Array.from(elements).some((element) => element.matches(':hover'));
+      });
+  
+      if (isOverSomeElement) {
+        console.log('Mouse is over the element now.');
+        cursorPointerRef.current.style.opacity = '0';
+        cursorRoundRef.current.style.opacity = '0';
+      } else {
+        cursorPointerRef.current.style.opacity = '1';
+        cursorRoundRef.current.style.opacity = '1';
+      }
+    };
+    
     if (cursorPointerRef?.current?.style) {
       verifyOveredElement();
 
