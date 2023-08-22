@@ -69,7 +69,8 @@ const Navbar = () => {
     if (!isFirstRender) {
       handleExpandToggle()
     }
-  }, [isFirstRender, pathname])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <>

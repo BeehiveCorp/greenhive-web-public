@@ -17,6 +17,7 @@
     height: 100%;
     display: flex;
     align-items: center;
+    transition: .3s;
   }
 
   .right-content {
@@ -24,6 +25,7 @@
     height: 100%;
     display: flex;
     align-items: center;
+    transition: .3s;
 
     &__social {
       font-weight: 400;
@@ -32,6 +34,7 @@
       gap: 16px;
       writing-mode: vertical-lr;
       transform: rotateZ(180deg);
+      transition: .3s;
 
       @include themed {
         color: getColor('title');
