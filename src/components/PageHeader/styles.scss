@@ -1,0 +1,44 @@
+@import '@/theme';
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  
+  @include themed() { 
+    &__subtitle {
+      color: getColor('primary');
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: .2rem;
+    }
+  
+    &__title {
+      color: getColor('title');
+      font-weight: 500;
+      font-size: 2rem;
+    }
+  
+    &__background-text {
+      position: absolute;
+      font-weight: 550;
+      font-size: 12rem;
+      line-height: 4rem;
+      top: -2.2rem;
+      color: transparent;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: rgba($color: getColor('primary'), $alpha: 0.2);
+    }
+
+    .center {
+      text-align: center;
+      left: 0;
+      right: 0
+    }
+
+    .right {
+      text-align: end;
+      right: 0
+    }
+  }
+}

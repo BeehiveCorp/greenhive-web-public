@@ -8,26 +8,26 @@
   z-index: -1;
 
   &__item {
-  @include themed {
-    &:first-child, &:last-child {
-      border: 2px solid getColor('container');
-      border-top-width: 0;
-      border-bottom-width: 0;
-    }
+    @include themed {
+      &:first-child, &:last-child {
+        border: 2px solid getColor('container');
+        border-top-width: 0;
+        border-bottom-width: 0;
+      }
 
-    &:nth-child(4) {
-      border: 2px solid getColor('container');
-      border-top-width: 0;
-      border-bottom-width: 0;
-      border-right-width: 1px;
-    }
+      &:nth-child(4) {
+        border: 2px solid getColor('container');
+        border-top-width: 0;
+        border-bottom-width: 0;
+        border-right-width: 1px;
+      }
 
-    &:nth-child(5) {
-      border: 2px solid getColor('container');
-      border-top-width: 0;
-      border-bottom-width: 0;
-      border-left-width: 1px;
+      &:nth-child(5) {
+        border: 2px solid getColor('container');
+        border-top-width: 0;
+        border-bottom-width: 0;
+        border-left-width: 1px;
+      }
     }
-  }
   }
 }

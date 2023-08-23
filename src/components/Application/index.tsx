@@ -1,3 +1,4 @@
+import { PageHeader } from '../PageHeader'
 import { Grid } from '../Grid'
 
 import './styles.scss'
@@ -5,23 +6,11 @@ import './styles.scss'
 const Application = () => {
   return (
     <section className="container application">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-        perferendis debitis natus nesciunt adipisci voluptate corrupti porro
-        reiciendis incidunt, consequuntur, ea suscipit. Nisi cumque ratione
-        beatae suscipit blanditiis possimus officia! Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Impedit perferendis debitis natus nesciunt
-        adipisci voluptate corrupti porro reiciendis incidunt, consequuntur, ea
-        suscipit. Nisi cumque ratione beatae suscipit blanditiis possimus
-        officia! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Impedit perferendis debitis natus nesciunt adipisci voluptate corrupti
-        porro reiciendis incidunt, consequuntur, ea suscipit. Nisi cumque
-        ratione beatae suscipit blanditiis possimus officia! Lorem ipsum dolor
-        sit amet consectetur adipisicing elit. Impedit perferendis debitis natus
-        nesciunt adipisci voluptate corrupti porro reiciendis incidunt,
-        consequuntur, ea suscipit. Nisi cumque ratione beatae suscipit
-        blanditiis possimus officia!
-      </p>
+      <PageHeader
+        subtitle="a aplicação"
+        title="Greenhive: um app gamificado pela Ambipar"
+        backgroundText="app"
+      />
 
       <Grid />
     </section>
