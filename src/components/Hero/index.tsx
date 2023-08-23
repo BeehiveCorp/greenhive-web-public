@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { useMouse } from '@uidotdev/usehooks'
 import { BiLogoAndroid, BiLogoApple } from 'react-icons/bi'
 
 import { kyivTypeSans } from '@/app/fonts'
@@ -15,12 +14,12 @@ const targetClasses = ['theme-switcher', 'button', 'buttons']
 
 const Hero = () => {
   const { theme } = useTheme()
-  const mouseX = useMouse()[0].x
 
   const cursorRoundRef = useRef<HTMLDivElement>(null)
   const cursorPointerRef = useRef<HTMLDivElement>(null)
 
   const [mouseY, setMouseY] = useState(0)
+  const [mouseX, setMouseX] = useState(0)
 
   useEffect(() => {
     const verifyOveredElement = () => {
@@ -61,15 +60,18 @@ const Hero = () => {
 
   useEffect(() => {
     let clientScrollY = 0
+    let clientScrollX = 0
     let totalScrollY = 0
 
     function updateTotalScrollY() {
       totalScrollY = window.scrollY + clientScrollY
       setMouseY(totalScrollY)
+      setMouseX(clientScrollX)
     }
 
     document.addEventListener('mousemove', (e1) => {
       clientScrollY = e1.clientY
+      clientScrollX = e1.clientX
       updateTotalScrollY()
     })
 
