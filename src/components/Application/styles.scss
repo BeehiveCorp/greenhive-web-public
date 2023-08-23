@@ -1,5 +1,21 @@
 .application {
-  padding-top: 80px;
+  padding-top: 132px;
   padding-bottom: 80px;
-  position: relative
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+
+  &__page-header {
+    grid-row: 1;
+    grid-column: 1 / 8;
+  }
+
+  &__description {
+    grid-row: 2;
+    grid-column: 1 / 4;
+    margin-top: 56px;
+    text-align: justify;
+    font-size: 2rem;
+    line-height: 3rem;
+  }
 }

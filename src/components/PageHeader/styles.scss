@@ -9,22 +9,22 @@
     &__subtitle {
       color: getColor('primary');
       font-weight: 500;
-      font-size: 1rem;
+      font-size: 1.8rem;
       letter-spacing: .2rem;
     }
   
     &__title {
       color: getColor('title');
       font-weight: 500;
-      font-size: 2rem;
+      font-size: 3.6rem;
     }
   
     &__background-text {
       position: absolute;
       font-weight: 550;
-      font-size: 12rem;
+      font-size: 19.6rem;
       line-height: 4rem;
-      top: -2.2rem;
+      top: -1rem;
       color: transparent;
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: rgba($color: getColor('primary'), $alpha: 0.2);
