@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useMouse } from '@uidotdev/usehooks'
 import { BiLogoAndroid, BiLogoApple } from 'react-icons/bi'
 
@@ -15,10 +15,12 @@ const targetClasses = ['theme-switcher', 'button', 'buttons']
 
 const Hero = () => {
   const { theme } = useTheme()
-  const mouse = useMouse()[0]
+  const mouseX = useMouse()[0].x
 
   const cursorRoundRef = useRef<HTMLDivElement>(null)
   const cursorPointerRef = useRef<HTMLDivElement>(null)
+
+  const [mouseY, setMouseY] = useState(0)
 
   useEffect(() => {
     const verifyOveredElement = () => {
@@ -31,7 +33,6 @@ const Hero = () => {
       })
 
       if (isOverSomeElement) {
-        console.log('Mouse is over the element now.')
         cursorPointerRef.current.style.opacity = '0'
         cursorRoundRef.current.style.opacity = '0'
       } else {
@@ -43,17 +44,39 @@ const Hero = () => {
     if (cursorPointerRef?.current?.style) {
       verifyOveredElement()
 
-      cursorPointerRef.current.style.left = `${mouse.x}px`
-      cursorPointerRef.current.style.top = `${mouse.y - 82}px`
+      const left = `${mouseX}px`
+      const top = `${mouseY - 82}px`
+
+      cursorPointerRef.current.style.left = left
+      cursorPointerRef.current.style.top = top
 
       setTimeout(() => {
         if (cursorRoundRef?.current?.style) {
-          cursorRoundRef.current.style.left = `${mouse.x}px`
-          cursorRoundRef.current.style.top = `${mouse.y - 82}px`
+          cursorRoundRef.current.style.left = left
+          cursorRoundRef.current.style.top = top
         }
       }, 100)
     }
-  }, [mouse])
+  }, [mouseY, mouseX])
+
+  useEffect(() => {
+    let clientScrollY = 0
+    let totalScrollY = 0
+
+    function updateTotalScrollY() {
+      totalScrollY = window.scrollY + clientScrollY
+      setMouseY(totalScrollY)
+    }
+
+    document.addEventListener('mousemove', (e1) => {
+      clientScrollY = e1.clientY
+      updateTotalScrollY()
+    })
+
+    document.addEventListener('scroll', () => {
+      updateTotalScrollY()
+    })
+  }, [])
 
   return (
     <section className="container hero">

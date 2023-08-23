@@ -5,7 +5,7 @@
   display: grid;
   align-items: center;
   grid-template-columns: repeat(8, 1fr);
-  cursor: none;
+  // cursor: none;
 
   &__content {
     grid-row: 1;
