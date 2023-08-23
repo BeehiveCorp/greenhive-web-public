@@ -1,21 +1,103 @@
+@import '@/theme';
+
 .application {
-  padding-top: 132px;
   padding-bottom: 80px;
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  z-index: 10;
 
-  &__page-header {
-    grid-row: 1;
-    grid-column: 1 / 8;
-  }
+  @include themed {
+    &__presentation {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      padding-top: 132px;
+    }
 
-  &__description {
-    grid-row: 2;
-    grid-column: 1 / 4;
-    margin-top: 56px;
-    text-align: justify;
-    font-size: 2rem;
-    line-height: 3rem;
+    &__page-header {
+      grid-row: 1;
+      grid-column: 1 / span 8;
+    }
+  
+    &__description {
+      grid-row: 2;
+      grid-column: 1 / span 3;
+      margin-top: 64px;
+      text-align: justify;
+      font-size: 2rem;
+      line-height: 3.6rem;
+      font-weight: 300;
+      color: getColor('text');
+    }
+  
+    &__cards {
+      grid-row: 3;
+      grid-column: 1;
+      margin-top: 80px;
+      grid-column: 1 / span 8;
+      display: flex;
+      gap: 16px;
+  
+      &__card {
+        background-color: getColor('container');
+        padding: 3.2rem;
+        flex: 1;
+        border-radius: 8px;
+
+        .title {
+          font-size: 3.2rem;
+          color: getColor('primary');
+          margin-bottom: 40px;
+          margin-top: 8px;
+        }
+
+        .description {
+          font-size: 2rem;
+          line-height: 3.6rem;
+          color: rgba($color: getColor('title'), $alpha: 0.8);
+          text-align: justify;
+        }
+      }
+    }
+
+    &__objective {
+      margin-top: 80px;
+      grid-row: 4;
+      grid-column: 1 / span 8;
+      display: flex;
+      gap: 64px;
+
+      &__mockup {
+        border-radius: 8px;
+      }
+
+      &__content {
+        &__descriptions {
+          position: relative
+        }
+
+        &__shadow {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          
+          background: linear-gradient(
+            rgba(getColor('background'), 0),
+            getColor('background')
+          );
+        }
+
+        .application__objective__content__description + .application__objective__content__description {
+          margin-top: 24px;
+        }
+        
+        &__description {
+          font-size: 2rem;
+          line-height: 3.6rem;
+          font-weight: 300;
+          color: getColor('text');
+          margin-top: 40px;  
+        }
+      }
+    }
   }
 }

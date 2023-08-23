@@ -118,6 +118,7 @@
     border-radius: 50%;
     position: absolute;
     transform: translateX(-50%) translateY(-50%);
+    z-index: 999;
 
     @include themed() {
       outline: 2px solid getColor('primary');
@@ -131,6 +132,7 @@
     border-radius: 50%;
     position: absolute;
     transform: translateX(-50%) translateY(-50%);
+    z-index: 999;
 
     @include themed() {
       background-color: getColor('primary');

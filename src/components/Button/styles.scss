@@ -43,12 +43,14 @@
   }
 
   &.ghost {
+    transition: color 0.2s;
+
     @include themed() {
       background: transparent;
       color: rgba(getColor('title'), 0.8);
 
       &:hover {
-        color: 2px solid rgba(getColor('title'), 1);
+        color: rgba(getColor('title'), 1);
       }
     }
   }
