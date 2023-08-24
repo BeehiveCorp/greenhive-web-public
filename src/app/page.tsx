@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 
-import { OuterContent, Hero, Application } from '@/components'
+import { OuterContent, Hero, Application, Companies } from '@/components'
 
 import './styles.scss'
 
@@ -14,6 +14,7 @@ export default function Home() {
       <OuterContent />
       <Hero />
       <Application />
+      <Companies />
     </section>
   )
 }

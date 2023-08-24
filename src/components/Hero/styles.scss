@@ -86,6 +86,7 @@
     position: absolute;
     inset: 0;
     left: 20%;
+    height: calc(86vh - $navbar-height);
 
     @include themed() {
       background: linear-gradient(

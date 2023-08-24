@@ -9,17 +9,28 @@ const PageHeader: React.FC<PageHeaderProps> = ({
   title,
   backgroundText,
   position,
+  subtitleStyle,
+  titleStyle,
 }) => {
   return (
     <div className="page-header">
       {!!subtitle && (
-        <span className={`page-header__subtitle ${position}`}>{subtitle}</span>
+        <span
+          className={`page-header__subtitle ${position}`}
+          style={subtitleStyle}
+        >
+          {subtitle}
+        </span>
       )}
 
       {!!title && (
         <h3
           className={`page-header__title ${position}`}
-          style={{ ...kyivTypeSans.style, marginTop: subtitle ? 4 : 0 }}
+          style={{
+            ...kyivTypeSans.style,
+            ...titleStyle,
+            marginTop: subtitle ? 4 : 0,
+          }}
         >
           {title}
         </h3>
