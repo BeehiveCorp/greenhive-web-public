@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { BiMinus, BiPlus } from 'react-icons/bi'
 
 import { Grid } from '@/components/Grid'
 import { PageHeader } from '@/components/PageHeader'
@@ -10,7 +11,6 @@ import { useTheme } from '@/contexts/ThemeContext'
 import { QUESTIONS } from './mock'
 
 import './styles.scss'
-import { BiMinus, BiPlus } from 'react-icons/bi'
 
 const Faq = () => {
   const { palette } = useTheme()

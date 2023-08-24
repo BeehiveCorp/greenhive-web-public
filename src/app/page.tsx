@@ -18,6 +18,7 @@ export default function Home() {
       <Sections.Companies />
       <Sections.Articles />
       <Sections.Faq />
+      <Sections.CallToAction />
     </section>
   )
 }
