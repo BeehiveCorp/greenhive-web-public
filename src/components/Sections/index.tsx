@@ -4,6 +4,7 @@ import { Companies } from './Companies'
 import { Articles } from './Articles'
 import { Faq } from './Faq'
 import { CallToAction } from './CallToAction'
+import { XPosts } from './XPosts'
 
 export const Sections = {
   Hero,
@@ -12,4 +13,5 @@ export const Sections = {
   Articles,
   Faq,
   CallToAction,
+  XPosts,
 }

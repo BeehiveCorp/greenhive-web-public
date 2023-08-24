@@ -19,6 +19,7 @@ export default function Home() {
       <Sections.Articles />
       <Sections.Faq />
       <Sections.CallToAction />
+      <Sections.XPosts />
     </section>
   )
 }
