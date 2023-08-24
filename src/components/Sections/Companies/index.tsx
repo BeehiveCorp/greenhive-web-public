@@ -4,8 +4,8 @@ import { BiBadgeCheck, BiBarChart, BiLinkExternal } from 'react-icons/bi'
 
 import { useTheme } from '@/contexts/ThemeContext'
 
-import { Button } from '../Button'
-import { PageHeader } from '../PageHeader'
+import { Button } from '@/components/Button'
+import { PageHeader } from '@/components/PageHeader'
 
 import './styles.scss'
 

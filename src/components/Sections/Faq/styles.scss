@@ -1,0 +1,68 @@
+@import '@/theme';
+
+.faq {
+  z-index: 10;
+  position: relative;
+  padding-top: 160px;
+
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+
+  @include themed {
+    &__sticky {
+      grid-column: 1 / span 3 ;
+      position: relative;
+      
+      &__content {
+        position: sticky;
+        top: calc($navbar-height + 80px);
+      }
+    }
+  
+    &__questions {
+      grid-column: 4 / span 8;
+
+      cursor: default;
+
+      .faq__questions__question + .faq__questions__question {
+        margin-top: 16px;
+      }
+      
+      &__question {
+        cursor: pointer;
+
+        background-color: getColor('container');
+        border-radius: 8px;
+        overflow: hidden;
+        
+        &__card {
+          padding: 16px 32px;
+          display: flex;
+          justify-content: space-between;
+          gap: 32px;
+          align-items: center;
+
+          .question {
+            font-size: 2rem;
+            line-height: 3.6rem;
+            font-weight: 500;
+            color: getColor('title');
+            transition: .3s opacity ease-in;
+          }
+        }
+        
+        &__answer {
+          transition: .3s max-height ease-out;
+
+          .answer {
+            padding: 0 32px 16px;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            font-weight: 400;
+            color: getColor('text');
+          }
+        }
+      }
+    }
+  }
+}

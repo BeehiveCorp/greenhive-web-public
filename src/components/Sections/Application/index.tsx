@@ -5,9 +5,9 @@ import { BiBrain, BiLeaf, BiGift, BiLinkExternal } from 'react-icons/bi'
 import { useTheme } from '@/contexts/ThemeContext'
 import { kyivTypeSans } from '@/app/fonts'
 
-import { PageHeader } from '../PageHeader'
-import { Grid } from '../Grid'
-import { Button } from '../Button'
+import { Grid } from '@/components/Grid'
+import { Button } from '@/components/Button'
+import { PageHeader } from '@/components/PageHeader'
 
 import './styles.scss'
 

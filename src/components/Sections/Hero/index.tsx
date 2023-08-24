@@ -6,11 +6,11 @@ import { BiLogoAndroid, BiLogoApple } from 'react-icons/bi'
 import { kyivTypeSans } from '@/app/fonts'
 import { useTheme } from '@/contexts/ThemeContext'
 
-import { Button } from '../Button'
+import { Button } from '@/components/Button'
 
 import './styles.scss'
 
-const targetClasses = ['theme-switcher', 'button', 'buttons']
+const targetClasses = ['theme-switcher', 'button', 'buttons', 'faq__questions']
 
 const Hero = () => {
   const { theme } = useTheme()
