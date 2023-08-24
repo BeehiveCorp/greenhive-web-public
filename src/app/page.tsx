@@ -1,6 +1,12 @@
 import { Metadata } from 'next'
 
-import { OuterContent, Hero, Application, Companies } from '@/components'
+import {
+  OuterContent,
+  Hero,
+  Application,
+  Companies,
+  Articles,
+} from '@/components'
 
 import './styles.scss'
 
@@ -12,9 +18,11 @@ export default function Home() {
   return (
     <section className="home">
       <OuterContent />
+
       <Hero />
       <Application />
       <Companies />
+      <Articles />
     </section>
   )
 }
