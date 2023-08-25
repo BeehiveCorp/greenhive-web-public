@@ -1,6 +1,69 @@
+@import '@/theme';
+
 .x-posts {
   z-index: 10;
   position: relative;
 
   padding-top: 160px;
+
+  @include themed {
+    &__post {
+      width: 360px;
+      border: 1px solid getColor('border');
+      padding: 24px;
+      border-radius: 8px;
+
+      &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .author-data {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+
+          &__name {
+            color: getColor('title');
+            font-size: 1.6rem;
+            font-weight: 500;
+          }
+
+          &__username {
+            color: getColor('text');
+            font-weight: 1.2rem;
+            margin-top: 4px;
+          }
+
+          img {
+            border-radius: 50%;
+          }
+        }
+
+        img svg {
+          fill: red;
+        }
+      }
+
+      &__content {
+        margin-top: 32px;
+        color: rgba($color: getColor('title'), $alpha: 0.8);
+        font-size: 1.2rem;
+        line-height: 2.1rem;
+      }
+    }
+
+    .x-posts__post + .x-posts__post {
+      margin-left: 16px;
+    }
+  }
+
+  .carousel {
+    margin-top: 80px;
+    cursor: grab;
+
+    .flickity-viewport {
+      height: 0 !important;
+    }
+  }
 }

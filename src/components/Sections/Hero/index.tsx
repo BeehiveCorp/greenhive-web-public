@@ -10,7 +10,13 @@ import { Button } from '@/components/Button'
 
 import './styles.scss'
 
-const targetClasses = ['theme-switcher', 'button', 'buttons', 'faq__questions']
+const targetClasses = [
+  'theme-switcher',
+  'button',
+  'buttons',
+  'faq__questions',
+  'carousel',
+]
 
 const Hero = () => {
   const { theme } = useTheme()

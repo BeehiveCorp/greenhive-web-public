@@ -4,10 +4,8 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    remotePatterns: [
-      { hostname: 'avatars.githubusercontent.com' }
-    ]
-  }
+    remotePatterns: [{ hostname: 'avatars.githubusercontent.com' }],
+  },
 }
 
 module.exports = nextConfig
