@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 'use client'
 
 import { BiBrain, BiLeaf, BiGift, BiLinkExternal } from 'react-icons/bi'

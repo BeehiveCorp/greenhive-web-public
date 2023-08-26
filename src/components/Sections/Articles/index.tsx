@@ -2,8 +2,6 @@
 
 import { BiLinkExternal } from 'react-icons/bi'
 
-import { useTheme } from '@/contexts/ThemeContext'
-
 import { Button } from '@/components/Button'
 import { PageHeader } from '@/components/PageHeader'
 
@@ -12,14 +10,15 @@ import { ARTICLES_MOCK } from './mock'
 import './styles.scss'
 
 const Articles = () => {
-  const { palette } = useTheme()
-
   return (
     <div className="container articles">
       <PageHeader
         subtitle="blog"
         title="Conheça nosso blog"
         backgroundText="Ambipar"
+        backgroundTextStyle={{
+          fontSize: '10rem',
+        }}
         position="center"
       />
 

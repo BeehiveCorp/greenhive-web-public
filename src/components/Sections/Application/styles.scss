@@ -26,6 +26,10 @@
       line-height: 3.6rem;
       font-weight: 300;
       color: getColor('text');
+
+      @media (max-width: $big-bp) {
+        grid-column: 1 / span 8;
+      }
     }
   
     &__cards {
@@ -34,6 +38,7 @@
       margin-top: 80px;
       grid-column: 1 / span 8;
       display: flex;
+      flex-wrap: wrap;
       gap: 16px;
   
       &__card {
@@ -47,6 +52,10 @@
           color: getColor('primary');
           margin-bottom: 40px;
           margin-top: 8px;
+
+          @media (max-width: $medium-bp) {
+            font-size: 2.8rem;
+          }
         }
 
         .description {
@@ -54,6 +63,11 @@
           line-height: 3.6rem;
           color: rgba($color: getColor('title'), $alpha: 0.8);
           text-align: justify;
+
+          @media (max-width: $medium-bp) {
+            font-size: 1.6rem;
+            line-height: 2.8rem;
+          }
         }
       }
     }
@@ -64,9 +78,18 @@
       grid-column: 1 / span 8;
       display: flex;
       gap: 64px;
+      flex-wrap: wrap;
+
+      @media (max-width: calc($big-bp + 120px)) {
+        flex-direction: column;
+      }
 
       &__mockup {
         border-radius: 8px;
+        object-fit: cover;
+        flex: 1;
+        height: 400px;
+        max-width: 100%;
       }
 
       &__content {
@@ -96,6 +119,8 @@
           color: getColor('text');
           margin-top: 40px;  
         }
+
+        flex: 1.5;
       }
     }
   }

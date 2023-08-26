@@ -4,5 +4,6 @@ export type PageHeaderProps = {
   title?: string
   titleStyle?: React.CSSProperties
   backgroundText?: string
+  backgroundTextStyle?: React.CSSProperties
   position?: 'left' | 'center' | 'right'
 }

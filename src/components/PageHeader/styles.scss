@@ -17,6 +17,14 @@
       color: getColor('title');
       font-weight: 500;
       font-size: 3.6rem;
+
+      @media (max-width: $medium-bp) {
+      font-size: 3.6rem;
+      }
+
+      @media (max-width: $small-bp) {
+        font-size: 3rem;
+      }
     }
   
     &__background-text {
@@ -28,6 +36,14 @@
       color: transparent;
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: rgba($color: getColor('primary'), $alpha: 0.2);
+
+      @media (max-width: $medium-bp) {
+        font-size: 16rem;
+      }
+
+      @media (max-width: $small-bp) {
+        font-size: 12rem;
+      }
     }
 
     .center {

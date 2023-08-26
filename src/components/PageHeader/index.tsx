@@ -11,6 +11,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
   position,
   subtitleStyle,
   titleStyle,
+  backgroundTextStyle,
 }) => {
   return (
     <div className="page-header">
@@ -39,7 +40,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
       {!!backgroundText && (
         <span
           className={`page-header__background-text ${position}`}
-          style={kyivTypeSans.style}
+          style={{ ...kyivTypeSans.style, ...backgroundTextStyle }}
         >
           {backgroundText}
         </span>

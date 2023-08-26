@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 import { BiBadgeCheck, BiBarChart, BiLinkExternal } from 'react-icons/bi'
 
@@ -57,9 +58,14 @@ const Companies = () => {
             style={{ width: 'fit-content' }}
           />
         </div>
-      </div>
 
-      <img src="/mockup-2.png" alt="Pessoa exibindo o aplicativo Greenhive" />
+        <Image
+          src="/mockup-2.png"
+          alt="Pessoa exibindo o aplicativo Greenhive"
+          width={1000}
+          height={1000}
+        />
+      </div>
     </section>
   )
 }
