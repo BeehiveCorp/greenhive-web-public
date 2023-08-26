@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Flickity, { FlickityOptions } from 'react-flickity-component'
+import { useMediaQuery } from '@uidotdev/usehooks'
 
 import { useTheme } from '@/contexts/ThemeContext'
 
@@ -13,6 +14,10 @@ import { LAST_TWEETS } from './mock'
 import './styles.scss'
 
 const XPosts = () => {
+  const smallBp = useMediaQuery('(max-width : 469px)')
+  const mediumBp = useMediaQuery('(max-width : 769px)')
+  const bigBp = useMediaQuery('(max-width : 869px)')
+
   const { palette } = useTheme()
 
   const flickityOptions: FlickityOptions = {
@@ -26,6 +31,15 @@ const XPosts = () => {
         subtitle="#greenhive"
         title="Últimos tweets"
         backgroundText="social"
+        backgroundTextStyle={{
+          fontSize: smallBp
+            ? '5rem'
+            : mediumBp
+            ? '8rem'
+            : bigBp
+            ? '10rem'
+            : '16rem',
+        }}
         position="center"
       />
 

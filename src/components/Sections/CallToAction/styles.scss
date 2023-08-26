@@ -9,11 +9,8 @@
     background-color: getColor('container');
     border-radius: 8px;
     padding: 80px;
+    display: flex;
     
-    div {
-      width: 60%;
-    }
-
     &__title {
       font-size: 4.8rem;
       font-weight: 500;
@@ -28,6 +25,30 @@
       margin-top: 24px;
     }
 
+    @media (max-width: calc($medium-bp + 100px)) {
+      &__title {
+        font-size: 4rem;
+      }
+  
+      &__description {
+        font-size: 1.6rem;
+        line-height: 2.8rem;
+        margin-top: 24px;
+      }
+    }
+
+    @media (max-width: calc($small-bp + 140px)) {
+      &__title {
+        font-size: 3.2rem;
+      }
+  
+      &__description {
+        font-size: 1.2rem;
+        line-height: 2.4rem;
+        margin-top: 24px;
+      }
+    }
+
     &__buttons {
       display: flex;
       flex-wrap: wrap;
@@ -36,11 +57,57 @@
       margin-top: 48px;
     }
 
+    &__content {
+      flex: 6;
+    }
+
     &__mockup {
-      position: absolute;
-      width: 18vw;
-      top: 40px;
-      right: 120px
+      flex: 4;
+
+      img {
+        width: 264px;
+        top: 80px;
+        right: 80px;
+        position: absolute;
+
+        @media (max-width: calc($big-bp + 100px)) {
+          width: 240px;
+          top: 80px;
+          right: 40px;
+        }
+  
+        @media (max-width: calc($medium-bp + 100px)) {
+          width: 240px;
+          top: 0;
+          bottom: 0;
+          margin: auto 0;
+          right: -15%;
+        }
+      }
+    }
+
+    @media (max-width: calc($small-bp + 140px)) {
+      flex-direction: column;
+      gap: 64px;
+      padding: 32px;
+      padding-bottom: 164px;
+      
+      &__mockup {
+        position: relative;
+        flex: 6;
+        height: 100px;
+        width: 100%;
+        background-color: red;
+
+        img {
+          width: 240px;
+          max-width: 100%;
+          bottom: -80%;
+          margin: 0 auto;
+          left: 0;
+          right: 0;
+        }
+      }
     }
   }
 }

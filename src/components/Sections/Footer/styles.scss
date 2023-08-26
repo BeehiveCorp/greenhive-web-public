@@ -19,6 +19,7 @@
 
       &__util {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         gap: 32px;
 
@@ -48,11 +49,17 @@
           flex: 1.5;
           width: 100%;
           display: flex;
+          flex-wrap: wrap;
           gap: 72px;
         }
 
         &__about {
           flex: 1;
+        }
+
+        @media (max-width: $medium-bp) {
+          flex-direction: column;
+          gap: 80px;
         }
       }
     }

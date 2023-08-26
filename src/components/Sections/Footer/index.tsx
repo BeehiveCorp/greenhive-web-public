@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 
-import { Greenhive } from '@/components'
+import { Greenhive } from '@/components/Greenhive'
 
 import { useTheme } from '@/contexts/ThemeContext'
 

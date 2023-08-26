@@ -54,6 +54,10 @@
           }
         }
       }
+
+      @media (max-width: $small-bp) {
+        padding: 80px 0;
+      }
     }
 
     img {
@@ -86,6 +90,10 @@
         height: 320px;
         border-radius: 8px;
       }
+    }
+
+    @media (max-width: $small-bp) {
+      margin-top: 80px;
     }
   }
 }

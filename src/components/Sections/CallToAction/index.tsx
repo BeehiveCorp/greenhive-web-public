@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 'use client'
 
 import { BiLogoAndroid, BiLogoApple } from 'react-icons/bi'
@@ -10,7 +12,7 @@ import './styles.scss'
 const CallToAction = () => {
   return (
     <div className="container call-to-action">
-      <div>
+      <div className="call-to-action__content">
         <h5 className="call-to-action__title" style={kyivTypeSans.style}>
           Baixe o app agora!
         </h5>
@@ -37,11 +39,12 @@ const CallToAction = () => {
         </div>
       </div>
 
-      <img
-        className="call-to-action__mockup"
-        src="/app-mockup.png"
-        alt="Imagem da tela inicial do aplicativo Greenhive"
-      />
+      <div className="call-to-action__mockup">
+        <img
+          src="/app-mockup.png"
+          alt="Imagem da tela inicial do aplicativo Greenhive"
+        />
+      </div>
     </div>
   )
 }

@@ -48,6 +48,7 @@
             font-weight: 500;
             color: getColor('title');
             transition: .3s opacity ease-in;
+            flex: 1;
           }
         }
         
@@ -62,7 +63,29 @@
             color: getColor('text');
           }
         }
+
+        @media (max-width: calc($small-bp + 80px)) {
+          .question {
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+          }
+
+          .answer {
+            font-size: 1.2rem;
+            line-height: 2rem;
+          }
+        }
       }
     }
+  }
+
+  @media (max-width: $medium-bp) {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  @media (max-width: $small-bp) {
+    padding: 80px 0;
   }
 }
