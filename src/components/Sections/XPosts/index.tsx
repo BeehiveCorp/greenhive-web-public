@@ -3,13 +3,18 @@
 import Image from 'next/image'
 import Flickity, { FlickityOptions } from 'react-flickity-component'
 
+import { useTheme } from '@/contexts/ThemeContext'
+
 import { PageHeader } from '@/components/PageHeader'
+import { XIcon } from '@/components/XIcon'
 
 import { LAST_TWEETS } from './mock'
 
 import './styles.scss'
 
 const XPosts = () => {
+  const { palette } = useTheme()
+
   const flickityOptions: FlickityOptions = {
     initialIndex: 0,
     prevNextButtons: false,
@@ -24,11 +29,7 @@ const XPosts = () => {
         position="center"
       />
 
-      <Flickity
-        className="carousel"
-        elementType={'div'}
-        options={flickityOptions}
-      >
+      <Flickity className="carousel" options={flickityOptions}>
         {LAST_TWEETS.map((tweet) => (
           <div className="x-posts__post" key={tweet.author.username}>
             <div className="x-posts__post__header">
@@ -49,7 +50,7 @@ const XPosts = () => {
                 </div>
               </div>
 
-              <Image src="/x-logo.svg" alt="X Logo" width={24} height={24} />
+              <XIcon size={32} color={palette.title} />
             </div>
 
             <div className="x-posts__post__content">

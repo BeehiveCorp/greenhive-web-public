@@ -32,15 +32,15 @@ const Articles = () => {
           >
             <div className="content">
               <h4 className="title">{article.title}</h4>
+
               <Button
                 text="LER MAIS"
                 variant="ghost"
-                RightIcon={() => (
-                  <BiLinkExternal size={16} color={palette.title} />
-                )}
+                RightIcon={() => <BiLinkExternal size={16} color={'#FFFFFF'} />}
                 style={{
                   padding: 0,
                   width: 'fit-content',
+                  color: '#FFFFFF',
                 }}
               />
             </div>

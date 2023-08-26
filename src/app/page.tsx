@@ -20,6 +20,7 @@ export default function Home() {
       <Sections.Faq />
       <Sections.CallToAction />
       <Sections.XPosts />
+      <Sections.Footer />
     </section>
   )
 }

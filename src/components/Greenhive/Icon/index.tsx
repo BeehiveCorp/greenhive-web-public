@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { SVGProps } from 'react'
 
-const GreenhiveIcon: React.FC<SVGProps<SVGSVGElement> & { size?: number }> = ({
+const Icon: React.FC<SVGProps<SVGSVGElement> & { size?: number }> = ({
   color = '#fff',
   size = 32,
   ...rest
@@ -35,4 +35,4 @@ const GreenhiveIcon: React.FC<SVGProps<SVGSVGElement> & { size?: number }> = ({
   )
 }
 
-export { GreenhiveIcon }
+export { Icon }

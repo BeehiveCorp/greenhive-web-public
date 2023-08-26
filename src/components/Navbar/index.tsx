@@ -14,7 +14,7 @@ import {
 
 import { useTheme } from '@/contexts/ThemeContext'
 
-import { GreenhiveHorizontal, GreenhiveIcon } from '../Logo'
+import { Greenhive } from '../Greenhive'
 import { Button } from '../Button'
 
 import './styles.scss'
@@ -78,7 +78,7 @@ const Navbar = () => {
           <div className="navbar">
             <div className={`navbar__logo ${isExpanded && '--expanded'}`}>
               <Link href="/">
-                <GreenhiveHorizontal
+                <Greenhive.Horizontal
                   color={
                     theme === 'light' ? palette.primary : palette.secondary
                   }
@@ -90,7 +90,7 @@ const Navbar = () => {
               <div className="navbar__routes__header">
                 <div style={{ marginLeft: '-6px' }}>
                   <Link href="/">
-                    <GreenhiveIcon color={palette.title} size={40} />
+                    <Greenhive.Icon color={palette.title} size={40} />
                   </Link>
                 </div>
 

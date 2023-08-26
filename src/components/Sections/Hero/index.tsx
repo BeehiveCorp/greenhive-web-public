@@ -15,7 +15,8 @@ const targetClasses = [
   'button',
   'buttons',
   'faq__questions',
-  'carousel',
+  'x-posts__post',
+  'footer',
 ]
 
 const Hero = () => {

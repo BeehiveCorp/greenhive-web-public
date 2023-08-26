@@ -1,6 +1,10 @@
 @import '@/theme';
 
 .x-posts {
+  *:focus {
+    outline:none;
+  }
+
   z-index: 10;
   position: relative;
 
@@ -39,10 +43,6 @@
             border-radius: 50%;
           }
         }
-
-        img svg {
-          fill: red;
-        }
       }
 
       &__content {
@@ -61,9 +61,5 @@
   .carousel {
     margin-top: 80px;
     cursor: grab;
-
-    .flickity-viewport {
-      height: 0 !important;
-    }
   }
 }

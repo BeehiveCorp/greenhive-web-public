@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { SVGProps } from 'react'
 
-const GreenhiveHorizontal: React.FC<SVGProps<SVGSVGElement>> = ({
+const Horizontal: React.FC<SVGProps<SVGSVGElement>> = ({
   color = '#fff',
   ...rest
 }) => {
@@ -33,4 +33,4 @@ const GreenhiveHorizontal: React.FC<SVGProps<SVGSVGElement>> = ({
   )
 }
 
-export { GreenhiveHorizontal }
+export { Horizontal }
