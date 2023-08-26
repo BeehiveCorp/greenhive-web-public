@@ -2,21 +2,21 @@
 
 import Image from 'next/image'
 import Flickity, { FlickityOptions } from 'react-flickity-component'
-import { useMediaQuery } from '@uidotdev/usehooks'
 
 import { useTheme } from '@/contexts/ThemeContext'
 
 import { PageHeader } from '@/components/PageHeader'
 import { XIcon } from '@/components/XIcon'
+import { useBetterMediaQuery } from '@/hooks'
 
 import { LAST_TWEETS } from './mock'
 
 import './styles.scss'
 
 const XPosts = () => {
-  const smallBp = useMediaQuery('(max-width : 469px)')
-  const mediumBp = useMediaQuery('(max-width : 769px)')
-  const bigBp = useMediaQuery('(max-width : 869px)')
+  const smallBp = useBetterMediaQuery('(max-width : 469px)')
+  const mediumBp = useBetterMediaQuery('(max-width : 769px)')
+  const bigBp = useBetterMediaQuery('(max-width : 869px)')
 
   const { palette } = useTheme()
 

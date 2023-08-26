@@ -1,20 +1,20 @@
 'use client'
 
 import { BiLinkExternal } from 'react-icons/bi'
-import { useMediaQuery } from '@uidotdev/usehooks'
 import Flickity, { FlickityOptions } from 'react-flickity-component'
 
 import { Button } from '@/components/Button'
 import { PageHeader } from '@/components/PageHeader'
+import { useBetterMediaQuery } from '@/hooks'
 
 import { ARTICLES_MOCK } from './mock'
 
 import './styles.scss'
 
 const Articles = () => {
-  const smallBp = useMediaQuery('(max-width : 469px)')
-  const mediumBp = useMediaQuery('(max-width : 769px)')
-  const bigBp = useMediaQuery('(max-width : 869px)')
+  const smallBp = useBetterMediaQuery('(max-width : 469px)')
+  const mediumBp = useBetterMediaQuery('(max-width : 769px)')
+  const bigBp = useBetterMediaQuery('(max-width : 869px)')
 
   const flickityOptions: FlickityOptions = {
     initialIndex: 1,
