@@ -91,12 +91,11 @@ const Hero = () => {
     <section className="container hero">
       <div className="hero__content">
         <h1 className="title" style={kyivTypeSans.style}>
-          APRENDA E GANHE COM O MEIO AMBIENTE
+          Bem-vindo ao Greenhive: Sua Jornada Sustentável Começa Aqui!
         </h1>
 
         <p className="text">
-          Baixe agora! Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Sed auctor justo in.
+          Baixe agora! 
         </p>
 
         <div className="buttons">

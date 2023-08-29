@@ -6,7 +6,7 @@ export const LAST_TWEETS = [
       username: '@almeida154',
     },
     content: {
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor justo in ante bibendum, vel mattis diam vehicula.',
+      text: 'Não consigo parar de jogar o GreenHive! Um aplicativo que une diversão e sustentabilidade de maneira incrível. Parabéns pelo conceito inovador!',
     },
   },
 
@@ -17,7 +17,7 @@ export const LAST_TWEETS = [
       username: '@bazzi',
     },
     content: {
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor justo in ante bibendum, vel mattis.',
+      text: 'O GreenHive é exatamente o que precisávamos para incentivar escolhas mais conscientes. Um aplauso para a equipe por criar uma maneira divertida de salvar o planeta! 👏🌎',
     },
   },
 
@@ -28,7 +28,7 @@ export const LAST_TWEETS = [
       username: '@jujuba',
     },
     content: {
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor justo in ante bibendum, vel mattis diam vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      text: 'Quem diria que um app poderia me tornar um ativista pelo meio ambiente? O GreenHive é genial e viciante. Parabéns por essa iniciativa transformadora!',
     },
   },
 
@@ -39,7 +39,7 @@ export const LAST_TWEETS = [
       username: '@marisantos',
     },
     content: {
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor justo in ante bibendum, vel mattis diam vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor justo in ante bibendum, vel mattis diam vehicula.',
+      text: 'Aplausos para o GreenHive por transformar a sustentabilidade em uma aventura! Já estou compartilhando com todos os meus amigos. Baixe agora e faça parte da mudança! 🌿🌟',
     },
   },
 
@@ -50,7 +50,7 @@ export const LAST_TWEETS = [
       username: '@marialina',
     },
     content: {
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor justo in ante bibendum, vel mattis diam vehicula.',
+      text: 'Não é só um jogo, é uma maneira de construir um futuro melhor. O GreenHive me deixou sem palavras - parabéns à equipe por criar algo tão impactante! 👊💚',
     },
   },
 ]

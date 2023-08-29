@@ -18,8 +18,8 @@ const CallToAction = () => {
         </h5>
 
         <p className="call-to-action__description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus
-          libero vitae eros.
+          Faça parte da revolução sustentável baixando o nosso app agora mesmo! 
+          Juntos, podemos construir um mundo mais verde e saudável.
         </p>
 
         <div className="call-to-action__buttons">
