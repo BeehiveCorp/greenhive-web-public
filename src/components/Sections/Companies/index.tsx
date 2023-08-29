@@ -26,9 +26,10 @@ const Companies = () => {
           />
 
           <p className="companies__content__description">
-             Ambiente colaborativo entre empregados de empresas parceiras, com essência de rede social, 
-             com possibilidade de: feed personalizado para a empresa em ambiente privado, compartilhamento de selos, 
-             pontuação, ranking e muito mais.
+            Ambiente colaborativo entre empregados de empresas parceiras, com
+            essência de rede social, com possibilidade de: feed personalizado
+            para a empresa em ambiente privado, compartilhamento de selos,
+            pontuação, ranking e muito mais.
           </p>
 
           <div className="companies__content__items">
@@ -36,8 +37,9 @@ const Companies = () => {
               <BiBarChart size={32} color={palette.title} />
               <div className="title">Score</div>
               <div className="description">
-              O Score GreenHive é uma pontuação dinâmica que reflete o esforço contínuo das empresas em direção
-              a um futuro mais verde e equilibrado. 
+                O Score GreenHive é uma pontuação dinâmica que reflete o esforço
+                contínuo das empresas em direção a um futuro mais verde e
+                equilibrado.
               </div>
             </div>
 
@@ -45,7 +47,8 @@ const Companies = () => {
               <BiBadgeCheck size={32} color={palette.title} />
               <div className="title">Selo verde</div>
               <div className="description">
-              No GreenHive, a busca pela excelência sustentável é recompensada com um símbolo de distinção - o Selo Verde.
+                No GreenHive, a busca pela excelência sustentável é recompensada
+                com um símbolo de distinção - o Selo Verde.
               </div>
             </div>
           </div>

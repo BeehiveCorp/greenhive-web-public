@@ -18,7 +18,7 @@ const CallToAction = () => {
         </h5>
 
         <p className="call-to-action__description">
-          Faça parte da revolução sustentável baixando o nosso app agora mesmo! 
+          Faça parte da revolução sustentável baixando o nosso app agora mesmo!
           Juntos, podemos construir um mundo mais verde e saudável.
         </p>
 

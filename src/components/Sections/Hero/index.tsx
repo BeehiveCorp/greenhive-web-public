@@ -94,9 +94,7 @@ const Hero = () => {
           Bem-vindo ao Greenhive: Sua Jornada Sustentável Começa Aqui!
         </h1>
 
-        <p className="text">
-          Baixe agora! 
-        </p>
+        <p className="text">Baixe agora!</p>
 
         <div className="buttons">
           <Button

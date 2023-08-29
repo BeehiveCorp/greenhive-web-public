@@ -28,10 +28,11 @@ const Application = () => {
         </div>
 
         <p className="application__description">
-           O Greenhive é mais do que um aplicativo, é uma experiência envolvente que transforma 
-           o aprendizado sobre o meio ambiente e a sustentabilidade em uma aventura cativante. 
-           Entre em um mundo onde você se torna o protagonista, enfrentando missões emocionantes 
-           para aprimorar seus conhecimentos e fazer escolhas conscientes.
+          O Greenhive é mais do que um aplicativo, é uma experiência envolvente
+          que transforma o aprendizado sobre o meio ambiente e a
+          sustentabilidade em uma aventura cativante. Entre em um mundo onde
+          você se torna o protagonista, enfrentando missões emocionantes para
+          aprimorar seus conhecimentos e fazer escolhas conscientes.
         </p>
 
         <div className="application__cards">
@@ -43,8 +44,9 @@ const Application = () => {
             </h5>
 
             <p className="description">
-              Descubra fatos e insights sobre sustentabilidade de maneira envolvente e acessível.
-              Cada missão é uma oportunidade de aprender e se tornar um defensor do nosso planeta.
+              Descubra fatos e insights sobre sustentabilidade de maneira
+              envolvente e acessível. Cada missão é uma oportunidade de aprender
+              e se tornar um defensor do nosso planeta.
             </p>
           </div>
 
@@ -56,8 +58,9 @@ const Application = () => {
             </h5>
 
             <p className="description">
-              Faça escolhas e veja as consequências – tanto positivas quanto desafiadoras.
-              Cada decisão que você toma impacta sua jornada e o mundo ao seu redor.
+              Faça escolhas e veja as consequências – tanto positivas quanto
+              desafiadoras. Cada decisão que você toma impacta sua jornada e o
+              mundo ao seu redor.
             </p>
           </div>
 
@@ -69,8 +72,9 @@ const Application = () => {
             </h5>
 
             <p className="description">
-              Conecte-se com outros entusiastas da sustentabilidade. Compartilhe suas conquistas,
-              colete selos e badges únicos a cada missão concluída e inspire sua rede a se juntar à causa.
+              Conecte-se com outros entusiastas da sustentabilidade. Compartilhe
+              suas conquistas, colete selos e badges únicos a cada missão
+              concluída e inspire sua rede a se juntar à causa.
             </p>
           </div>
         </div>
@@ -90,12 +94,15 @@ const Application = () => {
 
           <div className="application__objective__content__descriptions">
             <p className="application__objective__content__description">
-              Em um mundo onde os desafios ambientais estão se tornando cada vez mais urgentes, é essencial capacitar as pessoas com o conhecimento e a motivação para adotar práticas sustentáveis. A Greenhive adota uma abordagem única e envolvente para isso, combinando o mundo dos RPGs com ações do mundo real que promovem escolhas ecologicamente conscientes.
+              Em um mundo onde os desafios ambientais estão se tornando cada vez
+              mais urgentes, é essencial capacitar as pessoas com o conhecimento
+              e a motivação para adotar práticas sustentáveis. A Greenhive adota
+              uma abordagem única e envolvente para isso, combinando o mundo dos
+              RPGs com ações do mundo real que promovem escolhas ecologicamente
+              conscientes.
             </p>
 
-            <p className="application__objective__content__description">
-              
-            </p>
+            <p className="application__objective__content__description"></p>
 
             <div className="application__objective__content__shadow" />
           </div>
