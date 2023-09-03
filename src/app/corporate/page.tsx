@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Corporativo - Greenhive',
+  title: 'Corporativo • Greenhive',
 }
 
 export default function Corporate() {

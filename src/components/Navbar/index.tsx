@@ -138,7 +138,7 @@ const Navbar = () => {
                 }`}
                 href="/blog"
               >
-                Blog
+                Ambinews
               </Link>
 
               <div className="navbar__routes__corporate-button">

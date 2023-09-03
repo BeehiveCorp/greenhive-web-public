@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Blog - Greenhive',
+  title: 'Blog • Greenhive',
 }
 
 export default async function Blog() {

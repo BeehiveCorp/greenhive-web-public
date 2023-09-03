@@ -25,8 +25,8 @@ const Articles = () => {
     <div className="container articles">
       <PageHeader
         subtitle="blog"
-        title="Conheça nosso blog"
-        backgroundText="Ambipar"
+        title="Conheça a ambinews"
+        backgroundText="Ambinews"
         backgroundTextStyle={{
           fontSize: smallBp
             ? '5rem'
