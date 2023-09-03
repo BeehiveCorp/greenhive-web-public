@@ -14,6 +14,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="theme--dark" suppressHydrationWarning>
+      <link rel="icon" type="image/svg+xml" href="/greenhive.svg" />
+
       <body className={montserrat.className}>
         <Providers>
           <Navbar />

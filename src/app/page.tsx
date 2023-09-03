@@ -5,7 +5,7 @@ import { OuterContent, Sections } from '@/components'
 import './styles.scss'
 
 export const metadata: Metadata = {
-  title: 'Greenhive • Home',
+  title: 'Início • Greenhive',
 }
 
 export default function Home() {
