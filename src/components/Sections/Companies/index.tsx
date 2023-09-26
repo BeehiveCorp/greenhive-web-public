@@ -64,7 +64,7 @@ const Companies = () => {
         </div>
 
         <Image
-          src="/mockup-2.png"
+          src="/mockup-moodboard-1.png"
           alt="Pessoa exibindo o aplicativo Greenhive"
           width={1000}
           height={1000}

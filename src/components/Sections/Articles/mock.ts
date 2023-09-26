@@ -18,7 +18,7 @@ export const ARTICLES_MOCK = [
     url: '/article-3.png',
   },
   {
-    title: 'Qualquer título',
+    title: 'O Papel da Indústria na Poluição Marinha: Desafios e Soluções',
     description:
       'Este artigo aborda a importância da conexão com a natureza para...',
     url: '/article-4.png',

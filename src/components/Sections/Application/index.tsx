@@ -85,7 +85,7 @@ const Application = () => {
       <div className="application__objective">
         <img
           className="application__objective__mockup"
-          src="/mockup-1.png"
+          src="/mockup-moodboard-2.png"
           alt="Pessoa visualizando o aplicativo Greenhive"
         />
 
